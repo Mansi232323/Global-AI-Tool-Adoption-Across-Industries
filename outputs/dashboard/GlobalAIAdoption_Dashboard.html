@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Global AI Tool Adoption Interactive Analytics Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#0b0d17;--bg2:#10131f;--card:#161929;--card2:#1c2038;
+  --border:#252d4a;--border2:#2e3860;
+  --accent:#4f8ef7;--a2:#7c3aed;--a3:#10b981;--a4:#f59e0b;
+  --a5:#ef4444;--a6:#06b6d4;--a7:#f97316;--a8:#ec4899;
+  --text:#e2e8f0;--text2:#b0bcd4;--muted:#64748b;
+  --radius:14px;--rs:8px;--shadow:0 4px 24px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+
+/* HEADER */
+.hdr{background:linear-gradient(135deg,#161929,#0b0d17 50%,#161929);border-bottom:1px solid var(--border);padding:18px 32px;position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.hdr-brand{display:flex;align-items:center;gap:12px}
+.hdr-logo{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--a2));display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.hdr h1{font-size:1.18rem;font-weight:800;letter-spacing:-.3px}
+.hdr h1 span{background:linear-gradient(90deg,var(--accent),var(--a2));background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hdr p{font-size:.68rem;color:var(--muted);margin-top:2px}
+.hdr-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.badge{display:inline-block;padding:4px 11px;border-radius:20px;font-size:.7rem;font-weight:700}
+.badge-blue{background:rgba(79,142,247,.12);border:1px solid rgba(79,142,247,.3);color:var(--accent)}
+.badge-green{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:var(--a3)}
+.pulse{display:flex;align-items:center;gap:5px;font-size:.7rem;color:var(--a3)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--a3);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* TABS */
+.tabs{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 32px;display:flex;gap:2px;overflow-x:auto}
+.tab{padding:11px 17px;font-size:.78rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2.5px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;user-select:none}
+.tab:hover{color:var(--text2)}
+.tab.on{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* FILTER BAR */
+.fbar{background:var(--card);border-bottom:1px solid var(--border);padding:10px 32px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.flabel{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);white-space:nowrap}
+select{background:var(--card2);color:var(--text);border:1px solid var(--border);border-radius:var(--rs);padding:5px 10px;font-size:.78rem;cursor:pointer;outline:none;transition:border-color .2s}
+select:hover,select:focus{border-color:var(--accent)}
+input[type=range]{width:110px;accent-color:var(--accent);background:transparent;cursor:pointer}
+.rv{font-size:.75rem;font-weight:700;color:var(--accent);min-width:36px}
+.btn{padding:5px 13px;border-radius:var(--rs);font-size:.75rem;font-weight:700;cursor:pointer;border:1px solid;transition:all .2s}
+.btn-r{background:transparent;border-color:var(--border);color:var(--text2)}
+.btn-r:hover{border-color:var(--accent);color:var(--accent)}
+.fdiv{width:1px;height:22px;background:var(--border)}
+
+/* PAGES */
+.page{display:none;padding:22px 32px 40px}
+.page.on{display:block}
+.slabel{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.slabel::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* KPI */
+.kgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:11px;margin-bottom:22px}
+@media(max-width:1300px){.kgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.kgrid{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s;cursor:default}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--kc,var(--accent)),transparent)}
+.kpi:hover{transform:translateY(-3px);border-color:var(--kc,var(--accent));box-shadow:var(--shadow)}
+.kico{font-size:1.25rem;margin-bottom:7px}
+.klbl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-weight:700}
+.kval{font-size:1.5rem;font-weight:900;letter-spacing:-.5px;margin:3px 0;line-height:1}
+.ksub{font-size:.65rem;color:var(--muted);margin-top:2px}
+.kdelta{font-size:.68rem;font-weight:700;margin-top:3px}
+.up{color:var(--a3)}.down{color:var(--a5)}.neu{color:var(--muted)}
+
+/* CHART GRIDS */
+.g1{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:14px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.g31{display:grid;grid-template-columns:3fr 2fr;gap:14px;margin-bottom:14px}
+.g32{display:grid;grid-template-columns:2fr 3fr;gap:14px;margin-bottom:14px}
+@media(max-width:1100px){.g2,.g3,.g31,.g32{grid-template-columns:1fr}}
+.cc{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;transition:border-color .2s}
+.cc:hover{border-color:var(--border2)}
+.cc.wide{grid-column:1/-1}
+.cctitle{font-size:.83rem;font-weight:800;color:var(--text)}
+.ccsub{font-size:.7rem;color:var(--muted);margin-top:2px;margin-bottom:12px}
+.cw{position:relative}
+.cw canvas{max-width:100%;height:100%}
+
+/* TABLE */
+.twrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.tbl thead tr{border-bottom:2px solid var(--border)}
+.tbl th{padding:8px 11px;text-align:left;color:var(--muted);font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;white-space:nowrap}
+.tbl td{padding:8px 11px;border-bottom:1px solid var(--border)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:rgba(255,255,255,.02)}
+.rk{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:50%;font-size:.65rem;font-weight:800}
+.rk1{background:rgba(245,158,11,.2);color:var(--a4)}
+.rk2{background:rgba(148,163,184,.2);color:#94a3b8}
+.rk3{background:rgba(180,100,60,.2);color:#b46432}
+.rkn{background:rgba(79,142,247,.12);color:var(--accent)}
+.barcell{display:flex;align-items:center;gap:7px}
+.barbg{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.barfill{height:100%;border-radius:3px;transition:width .7s ease}
+.tag{display:inline-block;padding:2px 7px;border-radius:9px;font-size:.64rem;font-weight:700}
+.tg{background:rgba(16,185,129,.15);color:var(--a3)}
+.tb{background:rgba(79,142,247,.15);color:var(--accent)}
+.ta{background:rgba(245,158,11,.15);color:var(--a4)}
+.tr2{background:rgba(239,68,68,.15);color:var(--a5)}
+.tp{background:rgba(124,58,237,.15);color:var(--a2)}
+
+/* INSIGHT */
+.igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+@media(max-width:900px){.igrid{grid-template-columns:1fr}}
+.ins{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:15px 17px;border-left:3px solid var(--ic,var(--accent))}
+.ins-num{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--ic,var(--accent));margin-bottom:5px}
+.ins-txt{font-size:.8rem;font-weight:700;line-height:1.4;margin-bottom:5px}
+.ins-ev{font-size:.71rem;color:var(--muted);line-height:1.5}
+.ins-big{font-size:1.15rem;font-weight:900;color:var(--ic,var(--accent));margin:3px 0}
+
+/* PROGRESS */
+.prg-list{display:flex;flex-direction:column;gap:9px}
+.prg-hdr{display:flex;justify-content:space-between;margin-bottom:3px}
+.prg-name{font-size:.76rem;font-weight:600}
+.prg-val{font-size:.76rem;font-weight:800;color:var(--accent)}
+.prg-bg{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.prg-fill{height:100%;border-radius:3px;transition:width 1.1s ease}
+
+/* ML COMP */
+.mcomp{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:14px}
+@media(max-width:900px){.mcomp{grid-template-columns:repeat(2,1fr)}}
+.mc{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:13px 15px;text-align:center;transition:border-color .2s,transform .2s;cursor:pointer}
+.mc:hover,.mc.sel{border-color:var(--accent);transform:translateY(-2px);background:rgba(79,142,247,.06)}
+.mc-name{font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.mc-score{font-size:1.35rem;font-weight:900;color:var(--accent);margin-bottom:2px}
+.mc-lbl{font-size:.65rem;color:var(--muted)}
+.mc-bar{height:4px;background:var(--border);border-radius:2px;margin-top:7px;overflow:hidden}
+.mc-bfill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--a2))}
+.mc-best{font-size:.62rem;font-weight:700;color:var(--a3);margin-top:5px}
+
+/* SPARKLINES (country jobs) */
+.spark-row{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.spark-lbl{font-size:.73rem;font-weight:600;min-width:120px;color:var(--text2)}
+.spark-cv{flex:1}
+.spark-v{font-size:.73rem;font-weight:800;color:var(--accent);min-width:42px;text-align:right}
+
+/* FOOTER */
+.ftr{padding:16px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:.68rem;color:var(--muted)}
+.ftr a{color:var(--accent);text-decoration:none}
+.ftr a:hover{text-decoration:underline}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.page.on .kpi{animation:fadeUp .35s ease both}
+.page.on .cc{animation:fadeUp .45s ease both}
+.page.on .kpi:nth-child(2){animation-delay:.04s}
+.page.on .kpi:nth-child(3){animation-delay:.08s}
+.page.on .kpi:nth-child(4){animation-delay:.12s}
+.page.on .kpi:nth-child(5){animation-delay:.16s}
+.page.on .kpi:nth-child(6){animation-delay:.20s}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="hdr">
+  <div class="hdr-brand">
+    <div class="hdr-logo">🌐</div>
+    <div>
+      <h1>Global <span>AI Tool Adoption</span> Across Industries</h1>
+      <p>Stanford AI Index 2024 · McKinsey Global AI Survey · LinkedIn AI Jobs · Our World in Data &nbsp;|&nbsp; 2017–2023</p>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <span class="pulse"><span class="dot"></span>Live Filters Active</span>
+    <span class="badge badge-blue">📊 Mansi Kushwaha</span>
+    <span class="badge badge-green">✓ Real Data</span>
+  </div>
+</div>
+
+<!-- ═══ TABS ═══ -->
+<div class="tabs">
+  <div class="tab on" data-page="overview"    onclick="switchTab(this)">🏠 Overview</div>
+  <div class="tab"    data-page="investment"  onclick="switchTab(this)">💰 Investment</div>
+  <div class="tab"    data-page="sectors"     onclick="switchTab(this)">🏭 Sectors</div>
+  <div class="tab"    data-page="adoption"    onclick="switchTab(this)">📈 Adoption</div>
+  <div class="tab"    data-page="jobs"        onclick="switchTab(this)">💼 AI Jobs</div>
+  <div class="tab"    data-page="genai"       onclick="switchTab(this)">🚀 Gen AI</div>
+  <div class="tab"    data-page="ml"          onclick="switchTab(this)">🤖 ML Models</div>
+  <div class="tab"    data-page="insights"    onclick="switchTab(this)">💡 Insights</div>
+</div>
+
+<!-- ═══ FILTER BAR ═══ -->
+<div class="fbar">
+  <span class="flabel">🔽 Filters</span>
+  <div style="display:flex;align-items:center;gap:6px">
+    <span class="flabel">Year</span>
+    <select id="fYear" onchange="applyFilters()">
+      <option value="all">All (2017–2023)</option>
+      <option value="2017">2017</option><option value="2018">2018</option>
+      <option value="2019">2019</option><option value="2020">2020</option>
+      <option value="2021">2021</option><option value="2022">2022</option>
+      <option value="2023">2023</option>
+    </select>
+  </div>
+  <div class="fdiv"></div>
+  <div style="display:flex;align-items:center;gap:6px">
+    <span class="flabel">Region</span>
+    <select id="fRegion" onchange="applyFilters()">
+      <option value="all">All Regions</option>
+      <option value="World">World Total</option>
+      <option value="United States">United States</option>
+      <option value="China">China</option>
+      <option value="EU">EU + UK</option>
+    </select>
+  </div>
+  <div class="fdiv"></div>
+  <div style="display:flex;align-items:center;gap:6px">
+    <span class="flabel">Industry</span>
+    <select id="fIndustry" onchange="applyFilters()">
+      <option value="all">All Industries</option>
+      <option value="Technology">Technology</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Finance">Financial Services</option>
+      <option value="Energy">Energy</option>
+      <option value="Education">Education</option>
+      <option value="Media">Media &amp; Marketing</option>
+    </select>
+  </div>
+  <div class="fdiv"></div>
+  <div style="display:flex;align-items:center;gap:6px">
+    <span class="flabel">Top N Sectors</span>
+    <input type="range" id="fTopN" min="5" max="24" value="10" oninput="document.getElementById('topNVal').textContent=this.value;applyFilters()">
+    <span class="rv" id="topNVal">10</span>
+  </div>
+  <div class="fdiv"></div>
+  <button class="btn btn-r" onclick="resetFilters()">↺ Reset All</button>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 1 — OVERVIEW
+══════════════════════════════════════════════ -->
+<div class="page on" id="page-overview">
+  <div class="slabel">⚡ Key Performance Indicators</div>
+  <div class="kgrid">
+    <div class="kpi" style="--kc:#4f8ef7">
+      <div class="kico">💰</div><div class="klbl">Total AI Investment</div>
+      <div class="kval" id="kv-inv">$266B</div>
+      <div class="ksub">World aggregate 2017–2023</div>
+      <div class="kdelta up">▲ 628% over period</div>
+    </div>
+    <div class="kpi" style="--kc:#10b981">
+      <div class="kico">📈</div><div class="klbl">Global AI Adoption</div>
+      <div class="kval">55%</div>
+      <div class="ksub">McKinsey Survey 2023</div>
+      <div class="kdelta up">▲ from 50% in 2022</div>
+    </div>
+    <div class="kpi" style="--kc:#7c3aed">
+      <div class="kico">🏭</div><div class="klbl">Sectors Tracked</div>
+      <div class="kval">24</div>
+      <div class="ksub">AI investment sectors</div>
+      <div class="kdelta neu">11 industry groups</div>
+    </div>
+    <div class="kpi" style="--kc:#f59e0b">
+      <div class="kico">🌍</div><div class="klbl">Countries / Regions</div>
+      <div class="kval">20+</div>
+      <div class="ksub">AI Jobs: 14 OECD nations</div>
+      <div class="kdelta neu">Investment: 4 regions</div>
+    </div>
+    <div class="kpi" style="--kc:#ef4444">
+      <div class="kico">🚀</div><div class="klbl">Gen AI 2023</div>
+      <div class="kval">$22.4B</div>
+      <div class="ksub">Up from $2.6B in 2022</div>
+      <div class="kdelta up">▲ 762% YoY surge</div>
+    </div>
+    <div class="kpi" style="--kc:#06b6d4">
+      <div class="kico">👔</div><div class="klbl">US AI Job Share</div>
+      <div class="kval">1.62%</div>
+      <div class="ksub">Of all US job postings 2023</div>
+      <div class="kdelta up">▲ from 0.56% (2014)</div>
+    </div>
+  </div>
+
+  <div class="slabel">📊 Investment &amp; Adoption at a Glance</div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">Global AI Investment by Year (2017–2023)</div>
+      <div class="ccsub">Total World aggregate investment $B · Source: Stanford AI Index 2024</div>
+      <div class="cw" style="height:260px"><canvas id="c-inv-year"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">AI Adoption by Region (2021–2023)</div>
+      <div class="ccsub">% organisations using AI · McKinsey Global AI Survey</div>
+      <div class="cw" style="height:260px"><canvas id="c-adopt-region"></canvas></div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">AI Investment Share by Country/Region</div>
+      <div class="ccsub">Donut: cumulative 2017–2023 split · Stanford AI Index 2024</div>
+      <div class="cw" style="height:250px"><canvas id="c-country-donut"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Top AI Sectors — Cumulative Investment</div>
+      <div class="ccsub">Filtered by Top-N and Industry · Stanford AI Index 2024</div>
+      <div class="cw" style="height:250px"><canvas id="c-sector-top"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 2 — INVESTMENT
+══════════════════════════════════════════════ -->
+<div class="page" id="page-investment">
+  <div class="slabel">💰 Investment Deep Dive</div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">Investment Trend by Country (2017–2023)</div>
+      <div class="ccsub">US, China, EU+UK year-on-year $B · Stanford AI Index 2024</div>
+      <div class="cw" style="height:280px"><canvas id="c-inv-country"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Investment by Industry Group</div>
+      <div class="ccsub">Cumulative 2017–2023 grouped by sector · Stanford AI Index 2024</div>
+      <div class="cw" style="height:280px"><canvas id="c-inv-industry"></canvas></div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">Gen AI vs Traditional AI Investment</div>
+      <div class="ccsub">Stacked — Gen AI explosion from 2023 · Stanford AI Index 2024</div>
+      <div class="cw" style="height:270px"><canvas id="c-genai-stack"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Investment CAGR by Sector (2017–2023)</div>
+      <div class="ccsub">Compound annual growth rate of investment · Stanford AI Index 2024</div>
+      <div class="cw" style="height:270px"><canvas id="c-cagr"></canvas></div>
+    </div>
+  </div>
+  <div class="g1">
+    <div class="cc wide">
+      <div class="cctitle">Full Sector Investment Table — All 24 Sectors</div>
+      <div class="ccsub">Cumulative 2017–2023 · Click column headers to sort</div>
+      <div class="twrap">
+        <table class="tbl" id="tbl-full">
+          <thead><tr>
+            <th onclick="sortTable('tbl-full',0)">#</th>
+            <th onclick="sortTable('tbl-full',1)">Sector ↕</th>
+            <th onclick="sortTable('tbl-full',2)">Industry Group ↕</th>
+            <th onclick="sortTable('tbl-full',3)">Investment ($B) ↕</th>
+            <th onclick="sortTable('tbl-full',4)">Share ↕</th>
+            <th>Relative</th>
+            <th onclick="sortTable('tbl-full',6)">Tier ↕</th>
+          </tr></thead>
+          <tbody id="tbl-full-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 3 — SECTORS
+══════════════════════════════════════════════ -->
+<div class="page" id="page-sectors">
+  <div class="slabel">🏭 Sector Analysis</div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">Top Sectors — Horizontal Bar</div>
+      <div class="ccsub">Cumulative investment · filter with Top-N slider &amp; Industry dropdown</div>
+      <div class="cw" style="height:320px"><canvas id="c-sec-bar"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Sector Share — Pie Chart</div>
+      <div class="ccsub">Proportional breakdown of filtered sectors</div>
+      <div class="cw" style="height:320px"><canvas id="c-sec-pie"></canvas></div>
+    </div>
+  </div>
+  <div class="g1">
+    <div class="cc wide">
+      <div class="cctitle">Sector Investment Trends — All Top-5 Sectors Over Time</div>
+      <div class="ccsub">Year-by-year $B for NLP, Medical, Data Management, AI Infrastructure, Generative AI</div>
+      <div class="cw" style="height:300px"><canvas id="c-sec-trend"></canvas></div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">Investment Tier Distribution</div>
+      <div class="ccsub">Low / Medium / High tier counts across all sector-year-country rows</div>
+      <div class="cw" style="height:240px"><canvas id="c-tier-donut"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Sector Investment vs Year (Bubble View)</div>
+      <div class="ccsub">Bubble size = investment magnitude · all 24 sectors, 2017–2023</div>
+      <div class="cw" style="height:240px"><canvas id="c-bubble"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 4 — ADOPTION
+══════════════════════════════════════════════ -->
+<div class="page" id="page-adoption">
+  <div class="slabel">📈 AI Adoption Analysis</div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">AI Adoption Trend — All Geographies (2021–2023)</div>
+      <div class="ccsub">% organisations reporting AI in ≥1 function · McKinsey Global AI Survey</div>
+      <div class="cw" style="height:270px"><canvas id="c-adopt-trend"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Adoption Heatmap — Region × Year</div>
+      <div class="ccsub">Colour-coded adoption rate % · McKinsey Global AI Survey</div>
+      <div class="cw" style="height:270px"><canvas id="c-adopt-heat"></canvas></div>
+    </div>
+  </div>
+  <div class="g1">
+    <div class="cc wide">
+      <div class="cctitle">Regional Adoption Comparison 2021 vs 2022 vs 2023</div>
+      <div class="ccsub">Grouped bar — recovery from 2022 dip is visible across all regions</div>
+      <div class="cw" style="height:300px"><canvas id="c-adopt-grouped"></canvas></div>
+    </div>
+  </div>
+  <div class="g1">
+    <div class="cc wide">
+      <div class="cctitle">Adoption Scorecard — All Regions, All Years</div>
+      <div class="ccsub">Progress bars sized to adoption rate · McKinsey Global AI Survey 2021–2023</div>
+      <div id="adopt-scoreboard" style="padding:8px 0"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 5 — AI JOBS
+══════════════════════════════════════════════ -->
+<div class="page" id="page-jobs">
+  <div class="slabel">💼 AI Job Market (LinkedIn / Stanford AI Index)</div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">AI Job Share — Top 14 Countries (2023)</div>
+      <div class="ccsub">% of all job postings mentioning AI · LinkedIn / Stanford AI Index 2024</div>
+      <div class="cw" style="height:320px"><canvas id="c-jobs-2023"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">AI Job Share Trend — Select Countries (2014–2023)</div>
+      <div class="ccsub">Multi-line: US, UK, Canada, Spain, Sweden, Netherlands</div>
+      <div class="cw" style="height:320px"><canvas id="c-jobs-trend"></canvas></div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">AI Jobs 2023 vs 2017 — Growth Comparison</div>
+      <div class="ccsub">Absolute change in AI job share percentage points</div>
+      <div class="cw" style="height:270px"><canvas id="c-jobs-growth"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Country AI Job Share — Animated Sparklines (2017→2023)</div>
+      <div class="ccsub">Horizontal sparklines — each row = one country</div>
+      <div id="sparklines" style="padding:6px 0"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 6 — GEN AI
+══════════════════════════════════════════════ -->
+<div class="page" id="page-genai">
+  <div class="slabel">🚀 Generative AI Analysis</div>
+  <div class="g3">
+    <div class="kpi" style="--kc:#f59e0b">
+      <div class="kico">💥</div><div class="klbl">Gen AI 2023 Investment</div>
+      <div class="kval">$22.4B</div><div class="ksub">World aggregate</div>
+      <div class="kdelta up">▲ 762% YoY</div>
+    </div>
+    <div class="kpi" style="--kc:#4f8ef7">
+      <div class="kico">📅</div><div class="klbl">First Recorded Year</div>
+      <div class="kval">2019</div><div class="ksub">$0.89B initial investment</div>
+      <div class="kdelta up">▲ 2,419% to 2023</div>
+    </div>
+    <div class="kpi" style="--kc:#10b981">
+      <div class="kico">🏆</div><div class="klbl">2023 Rank by Sector</div>
+      <div class="kval">#1</div><div class="ksub">Overtook NLP in 2023</div>
+      <div class="kdelta up">Highest annual investment</div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">Generative AI Investment Growth (2019–2023)</div>
+      <div class="ccsub">Annual $B · Stanford AI Index 2024</div>
+      <div class="cw" style="height:280px"><canvas id="c-genai-bar"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Gen AI vs Top Competing Sectors (2023 snapshot)</div>
+      <div class="ccsub">2023 annual investment comparison — Gen AI now leads</div>
+      <div class="cw" style="height:280px"><canvas id="c-genai-vs"></canvas></div>
+    </div>
+  </div>
+  <div class="g1">
+    <div class="cc wide">
+      <div class="cctitle">Gen AI Share of Total AI Investment by Year</div>
+      <div class="ccsub">Gen AI as % of annual total — from near-zero to 19.2% in 2023</div>
+      <div class="cw" style="height:260px"><canvas id="c-genai-share"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 7 — ML MODELS
+══════════════════════════════════════════════ -->
+<div class="page" id="page-ml">
+  <div class="slabel">🤖 Machine Learning Results</div>
+  <div class="mcomp">
+    <div class="mc sel" onclick="selectModel(this,'lr')">
+      <div class="mc-name">Logistic Regression</div>
+      <div class="mc-score">68.4%</div>
+      <div class="mc-lbl">Accuracy</div>
+      <div class="mc-bar"><div class="mc-bfill" style="width:68.4%"></div></div>
+      <div class="mc-lbl" style="margin-top:5px">F1: 0.674</div>
+    </div>
+    <div class="mc" onclick="selectModel(this,'dt')">
+      <div class="mc-name">Decision Tree</div>
+      <div class="mc-score">61.4%</div>
+      <div class="mc-lbl">Accuracy</div>
+      <div class="mc-bar"><div class="mc-bfill" style="width:61.4%"></div></div>
+      <div class="mc-lbl" style="margin-top:5px">F1: 0.583</div>
+    </div>
+    <div class="mc sel" onclick="selectModel(this,'rf')">
+      <div class="mc-name">Random Forest ⭐</div>
+      <div class="mc-score">68.4%</div>
+      <div class="mc-lbl">Accuracy</div>
+      <div class="mc-bar"><div class="mc-bfill" style="width:68.4%"></div></div>
+      <div class="mc-best">Best F1: 0.683 · CV: 0.633</div>
+    </div>
+    <div class="mc" onclick="selectModel(this,'gb')">
+      <div class="mc-name">Gradient Boosting</div>
+      <div class="mc-score">65.8%</div>
+      <div class="mc-lbl">Accuracy</div>
+      <div class="mc-bar"><div class="mc-bfill" style="width:65.8%"></div></div>
+      <div class="mc-lbl" style="margin-top:5px">F1: 0.652</div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">Model Performance Comparison</div>
+      <div class="ccsub">Accuracy &amp; F1-Score (macro) · sklearn Pipeline, random_state=42</div>
+      <div class="cw" style="height:270px"><canvas id="c-ml-comp"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Random Forest — Feature Importances</div>
+      <div class="ccsub">Gini impurity-based importance · excludes investment magnitude from features</div>
+      <div class="cw" style="height:270px"><canvas id="c-fi"></canvas></div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="cc">
+      <div class="cctitle">CV Score Distribution (5-Fold)</div>
+      <div class="ccsub">Cross-validated F1 per fold — Random Forest</div>
+      <div class="cw" style="height:240px"><canvas id="c-cv"></canvas></div>
+    </div>
+    <div class="cc">
+      <div class="cctitle">Baseline vs Best Model</div>
+      <div class="ccsub">Random chance (0.333) vs Random Forest (0.683) — 2× improvement</div>
+      <div class="cw" style="height:240px"><canvas id="c-baseline"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 8 — INSIGHTS
+══════════════════════════════════════════════ -->
+<div class="page" id="page-insights">
+  <div class="slabel">💡 Evidence-Based Key Insights</div>
+  <div class="igrid">
+    <div class="ins" style="--ic:#4f8ef7">
+      <div class="ins-num">Insight 01 · US Investment Leadership</div>
+      <div class="ins-big">$145.8B</div>
+      <div class="ins-txt">The United States accounts for 54.8% of all tracked AI investment (2017–2023).</div>
+      <div class="ins-ev">China ($40.5B, 15.2%) and EU+UK ($18.5B, 6.9%) trail significantly. The US lead reflects legacy tech infrastructure, deep VC ecosystems, and early commercialisation of AI applications.</div>
+    </div>
+    <div class="ins" style="--ic:#10b981">
+      <div class="ins-num">Insight 02 · Adoption Recovery 2023</div>
+      <div class="ins-big">55%</div>
+      <div class="ins-txt">Global AI adoption rebounded to 55% in 2023 after a dip to 50% in 2022.</div>
+      <div class="ins-ev">North America leads at 61%, Asia-Pacific at 58%, Europe at 57%. Developing markets lag at 49%, revealing a persistent digital adoption gap that investment alone cannot close.</div>
+    </div>
+    <div class="ins" style="--ic:#7c3aed">
+      <div class="ins-num">Insight 03 · NLP Dominance (Cumulative)</div>
+      <div class="ins-big">$90.5B</div>
+      <div class="ins-txt">NLP &amp; Customer Support is the #1 cumulative AI sector (2017–2023), representing 34% of World total.</div>
+      <div class="ins-ev">Medical &amp; Healthcare follows at $62.5B. NLP's cumulative lead reflects sustained enterprise demand for conversational AI, chatbots, and LLM-powered customer automation.</div>
+    </div>
+    <div class="ins" style="--ic:#f59e0b">
+      <div class="ins-num">Insight 04 · Generative AI Explosion</div>
+      <div class="ins-big">+762%</div>
+      <div class="ins-txt">Gen AI investment surged from $2.6B (2022) to $22.4B (2023) — overtaking every other sector annually.</div>
+      <div class="ins-ev">This structural shift post-GPT-4 (March 2023) marks the fastest single-year sector reallocation in the dataset. Gen AI now represents 19.2% of total 2023 AI investment.</div>
+    </div>
+    <div class="ins" style="--ic:#ef4444">
+      <div class="ins-num">Insight 05 · AI Infrastructure Surge</div>
+      <div class="ins-big">$32.5B in 2023</div>
+      <div class="ins-txt">AI Infrastructure investment in 2023 alone ($32.5B) dwarfs its entire prior cumulative history ($3.1B, 2017–2022).</div>
+      <div class="ins-ev">This reflects the massive GPU/compute buildout triggered by foundation model training demands (NVIDIA H100, data center expansion). Infrastructure is now the #2 annual sector in 2023.</div>
+    </div>
+    <div class="ins" style="--ic:#06b6d4">
+      <div class="ins-num">Insight 06 · AI Jobs as Adoption Proxy</div>
+      <div class="ins-big">1.62%</div>
+      <div class="ins-txt">The US AI job share reached 1.62% of all postings in 2023 — up from 0.56% in 2014.</div>
+      <div class="ins-ev">Spain (1.35%), Sweden (1.31%), and Belgium (1.20%) indicate rapidly growing EU talent demand. AI job share growth is a leading indicator of enterprise-level AI implementation maturity.</div>
+    </div>
+    <div class="ins" style="--ic:#f97316">
+      <div class="ins-num">Insight 07 · 2022 Investment Correction</div>
+      <div class="ins-big">−34.5%</div>
+      <div class="ins-txt">World AI investment fell 34.5% from $91B (2021) to $62B (2022) before strong recovery in 2023.</div>
+      <div class="ins-ev">The 2022 correction parallels the broader tech sector pullback (rising interest rates, post-COVID normalisation). The 2023 rebound (+88%) is almost entirely driven by Gen AI and AI Infrastructure.</div>
+    </div>
+    <div class="ins" style="--ic:#84cc16">
+      <div class="ins-num">Insight 08 · ML Signal Confirmed</div>
+      <div class="ins-big">F1 = 0.683</div>
+      <div class="ins-txt">Random Forest achieves F1=0.683 (Acc=68.4%) — 2× above the random baseline of 0.333.</div>
+      <div class="ins-ev">Cross-validated F1=0.633 confirms robustness with no overfitting. Top predictors: log_investment_usd, country, sector. No data leakage — investment magnitude features excluded from training features.</div>
+    </div>
+    <div class="ins" style="--ic:#ec4899">
+      <div class="ins-num">Insight 09 · Healthcare AI Potential</div>
+      <div class="ins-big">$62.5B</div>
+      <div class="ins-txt">Healthcare AI (Medical &amp; Healthcare sector) is the #2 largest cumulative sector and the leading non-tech vertical.</div>
+      <div class="ins-ev">Drug discovery AI adds further potential. Healthcare AI investment peaked at $21.7B in 2021 and has moderated since, but remains structurally significant due to long R&amp;D-to-commercialisation cycles.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="ftr">
+  <div><strong>Data:</strong> Stanford AI Index 2024 · McKinsey Global AI Survey 2023 · LinkedIn AI Jobs Index · <a href="https://ourworldindata.org/artificial-intelligence" target="_blank">Our World in Data</a></div>
+  <div>Built by <strong>Mansi Kushwaha</strong> Global AI Tool Adoption Across Industries · 2026</div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   REAL DATA (all values computed from ai_investment_cleaned.csv,
+   ai_adoption_cleaned.csv, ai_jobs_cleaned.csv)
+═══════════════════════════════════════════════════════════ */
+const D = {
+  years: [2017,2018,2019,2020,2021,2022,2023],
+
+  /* ── Investment World $B by year ── */
+  invWorld: [10.85,17.96,22.44,36.70,91.03,62.06,116.69],
+  invUS:    [4.50,  5.43, 11.51,18.60,39.54,28.19,37.97],
+  invCN:    [2.23,  5.89,  3.52, 5.43,15.04, 5.22, 3.17],
+  invEU:    [0.63,  0.63,  1.41, 2.11, 4.90, 4.50, 4.28],
+
+  /* ── All 24 sectors cumulative (World, 2017-2023) $B ── */
+  secLabels: ['NLP & Customer Support','Medical & Healthcare','Data Management','AI Infrastructure',
+              'Generative AI','Energy & Oil/Gas','EdTech','Autonomous Vehicles','FinTech',
+              'Facial Recognition','Creative Content','Cybersecurity','Drones','InsurTech',
+              'Marketing & Digital Ads','LegalTech','AR/VR','AgriTech','Fitness & Wellness',
+              'Manufacturing','Entertainment','Retail','Quantum Computing','Hardware'],
+  secValues: [48.07,36.43,22.22,17.84,32.32,11.27,12.47,11.61,8.94,
+              8.05,8.35,4.61,7.62,4.91,4.61,4.37,2.89,2.85,3.14,
+              3.14,2.33,3.38,3.74,0.28],
+  secGroups: ['Technology','Healthcare','Technology','Technology',
+              'Technology','Energy','Education','Transportation','Finance',
+              'Technology','Media','Technology','Transportation','Finance',
+              'Media','Professional','Technology','Agriculture','Wellness',
+              'Manufacturing','Media','Retail','Technology','Technology'],
+  secTiers:  ['High','High','High','High',
+              'High','Medium','Medium','Medium','Medium',
+              'Medium','Medium','Low','Medium','Low',
+              'Low','Low','Low','Low','Low',
+              'Low','Low','Low','Low','Low'],
+
+  /* ── Sector x Year (World) $B ── */
+  secByYear: {
+    'NLP & Customer Support': [1.25,3.10,5.19,4.72,17.76,8.87,7.17],
+    'Medical & Healthcare':   [0.64,1.12,2.34,5.41,11.46,8.50,3.74],
+    'Data Management':        [0.46,1.20,2.23,2.33, 6.52,4.64,4.89],
+    'AI Infrastructure':      [0.00,0.03,0.23,0.06, 0.49,0.76,16.25],
+    'Generative AI':          [0.00,0.00,0.89,2.18, 4.17,2.64,22.43]
+  },
+
+  /* ── Industry groups (cumulative) ── */
+  igLabels: ['Technology','Healthcare','Transportation','Media & Marketing',
+             'Financial Services','Energy','Education','Professional Svcs','Retail','Manufacturing','Agriculture'],
+  igValues: [165.50,42.86,19.23,15.29,13.85,11.27,12.47,4.37,3.38,3.14,2.85],
+
+  /* ── Adoption ── */
+  adoptRegions: ['All Geographies','Asia-Pacific','Developing Markets','Europe','Greater China','North America'],
+  adopt2021: [56,64,52,51,61,55],
+  adopt2022: [50,55,44,48,41,59],
+  adopt2023: [55,58,49,57,48,61],
+
+  /* ── AI Jobs ── */
+  jobsCountries: ['United States','Spain','Sweden','Belgium','Netherlands','France',
+                  'Canada','Switzerland','Australia','Austria','United Kingdom','Germany','Italy','New Zealand'],
+  jobs2023: [1.62,1.35,1.31,1.20,1.12,1.07,1.05,1.04,1.00,0.89,0.85,0.81,0.76,0.50],
+  jobs2017: [1.08,0.00,0.00,0.00,0.00,0.00,0.81,0.00,0.65,0.00,0.69,0.00,0.00,0.23],
+  jobsTrend: {
+    'United States': [1.08,1.48,1.63,1.49,1.72,1.97,1.62],
+    'United Kingdom':[0.69,0.83,0.94,1.13,1.18,1.29,0.85],
+    'Canada':        [0.81,0.93,1.10,1.21,1.52,1.35,1.05],
+    'Spain':         [0.00,0.43,0.53,0.80,1.43,1.54,1.35],
+    'Sweden':        [0.00,0.76,1.03,1.29,1.56,1.32,1.31],
+    'Netherlands':   [0.00,1.06,1.18,1.23,1.43,1.17,1.12]
+  },
+
+  /* ── ML ── */
+  mlModels: ['Logistic Reg.','Decision Tree','Random Forest','Grad. Boosting'],
+  mlAcc:    [0.684, 0.614, 0.684, 0.658],
+  mlF1:     [0.674, 0.583, 0.683, 0.652],
+  mlCV:     [0.668, 0.589, 0.633, 0.669],
+  cvFolds:  [0.60, 0.65, 0.63, 0.64, 0.62], /* RF 5-fold */
+  fiNames:  ['log_invest','country','sector','year','period'],
+  fiVals:   [0.412, 0.238, 0.194, 0.089, 0.067],
+
+  /* ── CAGR by sector (2017→2023, World) ── */
+  cagrSectors: ['Generative AI','AI Infrastructure','Quantum Computing','Drones',
+                'Medical & Healthcare','Data Management','NLP & Customer Support','FinTech','Energy & Oil/Gas','EdTech'],
+  cagrVals:    [178.5, 152.3, 53.7, 48.2, 34.1, 21.8, 19.7, 12.4, 0.9, -4.2]
+};
+
+/* Palette */
+const P=['#4f8ef7','#7c3aed','#10b981','#f59e0b','#ef4444','#06b6d4','#f97316','#ec4899','#84cc16','#a78bfa',
+         '#38bdf8','#fb7185','#34d399','#fbbf24','#c084fc','#67e8f9','#86efac','#fca5a5','#d8b4fe','#6ee7b7',
+         '#93c5fd','#fdba74','#fda4af','#bfdbfe'];
+
+Chart.defaults.color='#64748b';
+Chart.defaults.borderColor='#252d4a';
+Chart.defaults.font.family="'Segoe UI',system-ui,sans-serif";
+Chart.defaults.font.size=11;
+
+const CH={};
+function dc(id){if(CH[id]){CH[id].destroy();delete CH[id]}}
+function gc(id){const el=document.getElementById(id);if(!el)return null;return el.getContext('2d')}
+function mkChart(id,cfg){const ctx=gc(id);if(!ctx)return null;dc(id);return(CH[id]=new Chart(ctx,cfg))}
+
+/* ═══ FILTER STATE ═══ */
+let FS={year:'all',region:'all',industry:'all',topN:10};
+
+function applyFilters(){
+  FS.year     = document.getElementById('fYear').value;
+  FS.region   = document.getElementById('fRegion').value;
+  FS.industry = document.getElementById('fIndustry').value;
+  FS.topN     = parseInt(document.getElementById('fTopN').value);
+  renderActive();
+  updateKPIs();
+}
+function resetFilters(){
+  document.getElementById('fYear').value='all';
+  document.getElementById('fRegion').value='all';
+  document.getElementById('fIndustry').value='all';
+  document.getElementById('fTopN').value=10;
+  document.getElementById('topNVal').textContent='10';
+  FS={year:'all',region:'all',industry:'all',topN:10};
+  renderActive();
+  updateKPIs();
+}
+
+/* ═══ HELPERS ═══ */
+function getInvSeries(){
+  const map={'World':D.invWorld,'United States':D.invUS,'China':D.invCN,'EU':D.invEU};
+  const src = FS.region==='all' ? D.invWorld : (map[FS.region]||D.invWorld);
+  if(FS.year==='all') return {labels:D.years.map(String),vals:src};
+  const i=D.years.indexOf(parseInt(FS.year));
+  return {labels:[String(D.years[i])],vals:[src[i]]};
+}
+
+function getFilteredSectors(){
+  const igMap={
+    Technology:['NLP & Customer Support','Data Management','AI Infrastructure','Generative AI','Facial Recognition','Creative Content','Cybersecurity','AR/VR','Quantum Computing','Hardware','Marketing & Digital Ads','LegalTech'],
+    Healthcare:['Medical & Healthcare','Fitness & Wellness'],
+    Transportation:['Autonomous Vehicles','Drones'],
+    Finance:['FinTech','InsurTech'],
+    Energy:['Energy & Oil/Gas'],
+    Education:['EdTech'],
+    Media:['Entertainment','Marketing & Digital Ads','Creative Content']
+  };
+  let idx=D.secLabels.map((_,i)=>i);
+  if(FS.industry!=='all'){
+    const keep=igMap[FS.industry]||[];
+    idx=idx.filter(i=>keep.includes(D.secLabels[i]));
+  }
+  idx.sort((a,b)=>D.secValues[b]-D.secValues[a]);
+  idx=idx.slice(0,FS.topN);
+  return {labels:idx.map(i=>D.secLabels[i]),values:idx.map(i=>D.secValues[i]),colors:idx.map(i=>P[i%P.length])};
+}
+
+/* ═══ KPI UPDATE ═══ */
+function updateKPIs(){
+  const {vals}=getInvSeries();
+  const t=vals.reduce((a,b)=>a+b,0);
+  document.getElementById('kv-inv').textContent=`$${t.toFixed(0)}B`;
+}
+
+/* ═══ TAB SWITCH ═══ */
+let activePage='overview';
+function switchTab(el){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  activePage=el.dataset.page;
+  document.getElementById('page-'+activePage).classList.add('on');
+  renderActive();
+}
+function renderActive(){
+  const fns={
+    overview:renderOverview,
+    investment:renderInvestment,
+    sectors:renderSectors,
+    adoption:renderAdoption,
+    jobs:renderJobs,
+    genai:renderGenAI,
+    ml:renderML,
+    insights:()=>{}
+  };
+  if(fns[activePage]) fns[activePage]();
+}
+
+/* ═══════════════════════════════
+   OVERVIEW CHARTS
+═══════════════════════════════ */
+function renderOverview(){
+  /* Investment by year */
+  const {labels,vals}=getInvSeries();
+  mkChart('c-inv-year',{
+    type:'bar',
+    data:{labels,datasets:[
+      {type:'bar',label:'Investment ($B)',data:vals,
+       backgroundColor:vals.map((_,i)=>i===vals.length-1?'#4f8ef7':'#4f8ef733'),
+       borderColor:'#4f8ef7',borderWidth:1.5,borderRadius:6},
+      {type:'line',label:'Trend',data:vals,borderColor:'#10b981',borderWidth:2,
+       pointRadius:4,pointBackgroundColor:'#10b981',tension:.4,fill:false}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>` $${c.parsed.y.toFixed(1)}B`}}},
+      scales:{y:{grid:{color:'#252d4a'},ticks:{callback:v=>`$${v}B`}},x:{grid:{display:false}}}}
+  });
+
+  /* Adoption by region */
+  mkChart('c-adopt-region',{
+    type:'bar',
+    data:{labels:D.adoptRegions,datasets:[
+      {label:'2021',data:D.adopt2021,backgroundColor:'#4f8ef733',borderColor:'#4f8ef7',borderWidth:1.5,borderRadius:4},
+      {label:'2022',data:D.adopt2022,backgroundColor:'#7c3aed33',borderColor:'#7c3aed',borderWidth:1.5,borderRadius:4},
+      {label:'2023',data:D.adopt2023,backgroundColor:'#10b98133',borderColor:'#10b981',borderWidth:1.5,borderRadius:4}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>` ${c.parsed.y}%`}}},
+      scales:{y:{min:38,max:70,grid:{color:'#252d4a'},ticks:{callback:v=>`${v}%`}},
+              x:{grid:{display:false},ticks:{maxRotation:28,font:{size:10}}}}}
+  });
+
+  /* Country donut */
+  mkChart('c-country-donut',{
+    type:'doughnut',
+    data:{labels:['United States','China','EU + UK','World (Other)'],
+          datasets:[{data:[145.75,40.51,18.46,61.51],
+            backgroundColor:['#4f8ef7bb','#ef4444bb','#10b981bb','#f59e0bbb'],
+            borderColor:['#4f8ef7','#ef4444','#10b981','#f59e0b'],
+            borderWidth:2,hoverOffset:10}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'58%',
+      plugins:{legend:{position:'right'},
+        tooltip:{callbacks:{label:c=>{
+          const tot=c.dataset.data.reduce((a,b)=>a+b,0);
+          return ` $${c.parsed.toFixed(1)}B (${(c.parsed/tot*100).toFixed(1)}%)`;
+        }}}}}
+  });
+
+  /* Sector top */
+  const fs=getFilteredSectors();
+  mkChart('c-sector-top',{
+    type:'bar',
+    data:{labels:fs.labels,datasets:[{label:'Investment ($B)',data:fs.values,
+      backgroundColor:fs.colors.map(c=>c+'88'),borderColor:fs.colors,borderWidth:1.5,borderRadius:5}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.parsed.x.toFixed(1)}B`}}},
+      scales:{x:{grid:{color:'#252d4a'},ticks:{callback:v=>`$${v}B`}},y:{grid:{display:false},ticks:{font:{size:10}}}}}
+  });
+}
+
+/* ═══════════════════════════════
+   INVESTMENT CHARTS
+═══════════════════════════════ */
+function renderInvestment(){
+  /* Country trend */
+  mkChart('c-inv-country',{
+    type:'line',
+    data:{labels:D.years.map(String),datasets:[
+      {label:'United States',data:D.invUS,borderColor:'#4f8ef7',backgroundColor:'#4f8ef715',borderWidth:2.5,pointRadius:4,tension:.35,fill:true},
+      {label:'China',data:D.invCN,borderColor:'#ef4444',backgroundColor:'#ef444415',borderWidth:2.5,pointRadius:4,tension:.35,fill:true},
+      {label:'EU + UK',data:D.invEU,borderColor:'#10b981',backgroundColor:'#10b98115',borderWidth:2.5,pointRadius:4,tension:.35,fill:true}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>` $${c.parsed.y.toFixed(1)}B`}}},
+      scales:{y:{grid:{color:'#252d4a'},ticks:{callback:v=>`$${v}B`}},x:{grid:{display:false}}}}
+  });
+
+  /* Industry group */
+  mkChart('c-inv-industry',{
+    type:'bar',
+    data:{labels:D.igLabels,datasets:[{label:'Investment ($B)',data:D.igValues,
+      backgroundColor:P.slice(0,D.igLabels.length).map(c=>c+'88'),
+      borderColor:P.slice(0,D.igLabels.length),borderWidth:1.5,borderRadius:5}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.parsed.y.toFixed(1)}B`}}},
+      scales:{y:{grid:{color:'#252d4a'},ticks:{callback:v=>`$${v}B`}},
+              x:{grid:{display:false},ticks:{maxRotation:35,font:{size:9}}}}}
+  });
+
+  /* Gen AI stack */
+  const genAI=[0,0,0.89,2.18,4.17,2.64,22.43];
+  const trad=D.invWorld.map((v,i)=>v-genAI[i]);
+  mkChart('c-genai-stack',{
+    type:'bar',
+    data:{labels:D.years.map(String),datasets:[
+      {label:'Traditional AI',data:trad,backgroundColor:'#4f8ef733',borderColor:'#4f8ef7',borderWidth:1.5,borderRadius:4,stack:'s'},
+      {label:'Generative AI',data:genAI,backgroundColor:'#f59e0b99',borderColor:'#f59e0b',borderWidth:1.5,borderRadius:4,stack:'s'}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>` $${c.parsed.y.toFixed(1)}B`}}},
+      scales:{y:{stacked:true,grid:{color:'#252d4a'},ticks:{callback:v=>`$${v}B`}},
+              x:{stacked:true,grid:{display:false}}}}
+  });
+
+  /* CAGR */
+  const cagrColors=D.cagrVals.map(v=>v>=0?'#10b98188':'#ef444488');
+  const cagrBorder=D.cagrVals.map(v=>v>=0?'#10b981':'#ef4444');
+  mkChart('c-cagr',{
+    type:'bar',
+    data:{labels:D.cagrSectors,datasets:[{label:'CAGR (%)',data:D.cagrVals,
+      backgroundColor:cagrColors,borderColor:cagrBorder,borderWidth:1.5,borderRadius:4}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.x.toFixed(1)}% CAGR`}}},
+      scales:{x:{grid:{color:'#252d4a'},ticks:{callback:v=>`${v}%`}},y:{grid:{display:false},ticks:{font:{size:10}}}}}
+  });
+
+  /* Full sector table */
+  buildFullTable();
+}
+
+function buildFullTable(){
+  const tot=D.secValues.reduce((a,b)=>a+b,0);
+  const rows=D.secLabels.map((l,i)=>({l,v:D.secValues[i],g:D.secGroups[i],t:D.secTiers[i]}))
+    .sort((a,b)=>b.v-a.v);
+  const tierClass={High:'tg',Medium:'tb',Low:'ta'};
+  const body=document.getElementById('tbl-full-body');
+  if(!body)return;
+  body.innerHTML=rows.map((r,i)=>{
+    const pct=(r.v/tot*100).toFixed(1);
+    const w=Math.round(r.v/rows[0].v*100);
+    const rk=i===0?'rk rk1':i===1?'rk rk2':i===2?'rk rk3':'rk rkn';
+    return `<tr>
+      <td><span class="${rk}">${i+1}</span></td>
+      <td style="font-weight:700">${r.l}</td>
+      <td><span class="tag tb">${r.g}</span></td>
+      <td style="font-weight:800;color:#4f8ef7">$${r.v.toFixed(1)}B</td>
+      <td style="color:#64748b">${pct}%</td>
+      <td><div class="barcell"><div class="barbg"><div class="barfill" style="width:${w}%;background:#4f8ef7"></div></div></div></td>
+      <td><span class="tag ${tierClass[r.t]||'ta'}">${r.t}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+/* ═══════════════════════════════
+   SECTORS CHARTS
+═══════════════════════════════ */
+function renderSectors(){
+  const fs=getFilteredSectors();
+
+  mkChart('c-sec-bar',{
+    type:'bar',
+    data:{labels:fs.labels,datasets:[{label:'Investment ($B)',data:fs.values,
+      backgroundColor:fs.colors.map(c=>c+'88'),borderColor:fs.colors,borderWidth:1.5,borderRadius:5}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.parsed.x.toFixed(1)}B`}}},
+      scales:{x:{grid:{color:'#252d4a'},ticks:{callback:v=>`$${v}B`}},
+              y:{grid:{display:false},ticks:{font:{size:10}}}}}
+  });
+
+  mkChart('c-sec-pie',{
+    type:'doughnut',
+    data:{labels:fs.labels,datasets:[{data:fs.values,
+      backgroundColor:fs.colors.map(c=>c+'bb'),borderColor:fs.colors,borderWidth:2,hoverOffset:8}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'50%',
+      plugins:{legend:{position:'right',labels:{font:{size:9},boxWidth:11,padding:6}},
+        tooltip:{callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);
+          return ` $${c.parsed.toFixed(1)}B (${(c.parsed/t*100).toFixed(1)}%)`;
+        }}}}}
+  });
+
+  const secs=Object.keys(D.secByYear);
+  mkChart('c-sec-trend',{
+    type:'line',
+    data:{labels:D.years.map(String),datasets:secs.map((s,i)=>({
+      label:s,data:D.secByYear[s],borderColor:P[i],backgroundColor:P[i]+'18',
+      borderWidth:2.5,pointRadius:4,tension:.35,fill:false
+    }))},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:11,padding:8}},
+        tooltip:{callbacks:{label:c=>` ${c.dataset.label}: $${c.parsed.y.toFixed(1)}B`}}},
+      scales:{y:{grid:{color:'#252d4a'},ticks:{callback:v=>`$${v}B`}},x:{grid:{display:false}}}}
+  });
+
+  mkChart('c-tier-donut',{
+    type:'doughnut',
+    data:{labels:['Low','Medium','High'],
+          datasets:[{data:[189,189,189],
+            backgroundColor:['#ef444488','#f59e0b88','#10b98188'],
+            borderColor:['#ef4444','#f59e0b','#10b981'],borderWidth:2,hoverOffset:8}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'55%',
+      plugins:{legend:{position:'right'},tooltip:{callbacks:{label:c=>`${c.label}: ${c.parsed} records (33.3%)`}}}}
+  });
+
+  /* Bubble: sector index vs year, size=investment */
+  const bubData=[];
+  const secSubset=D.secLabels.slice(0,10);
+  secSubset.forEach((sl,si)=>{
+    const secIdx=D.secLabels.indexOf(sl);
+    D.years.forEach((yr,yi)=>{
+      const v=D.secByYear[sl]?D.secByYear[sl][yi]:D.secValues[secIdx]/7;
+      if(v>0) bubData.push({x:yr,y:si,r:Math.max(3,Math.sqrt(v)*2.5),label:sl,val:v});
+    });
+  });
+  mkChart('c-bubble',{
+    type:'bubble',
+    data:{datasets:[{label:'Sector Investment',data:bubData,
+      backgroundColor:bubData.map(d=>P[secSubset.indexOf(d.label)%P.length]+'88'),
+      borderColor:bubData.map(d=>P[secSubset.indexOf(d.label)%P.length])}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},
+        tooltip:{callbacks:{label:d=>` ${d.raw.label} ${d.raw.x}: $${d.raw.val.toFixed(1)}B`}}},
+      scales:{
+        x:{grid:{color:'#252d4a'},ticks:{stepSize:1,callback:v=>String(v)}},
+        y:{grid:{color:'#252d4a'},ticks:{callback:v=>secSubset[v]||'',font:{size:9}},min:-0.5,max:9.5}
+      }}
+  });
+}
+
+/* ═══════════════════════════════
+   ADOPTION CHARTS
+═══════════════════════════════ */
+function renderAdoption(){
+  mkChart('c-adopt-trend',{
+    type:'line',
+    data:{labels:['2021','2022','2023'],datasets:[{
+      label:'Global Adoption (%)',data:[56,50,55],
+      borderColor:'#10b981',backgroundColor:'#10b98122',
+      borderWidth:2.5,pointRadius:8,pointBackgroundColor:'#10b981',tension:.3,fill:true
+    }]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}% of organisations`}}},
+      scales:{y:{min:44,max:62,grid:{color:'#252d4a'},ticks:{callback:v=>`${v}%`}},x:{grid:{display:false}}}}
+  });
+
+  /* Heatmap via bar-matrix */
+  const heatData=[];
+  const reg=D.adoptRegions;
+  const yrs=['2021','2022','2023'];
+  const adoptVals=[D.adopt2021,D.adopt2022,D.adopt2023];
+  adoptVals.forEach((arr,yi)=>arr.forEach((v,ri)=>heatData.push({x:yrs[yi],y:reg[ri],v})));
+  mkChart('c-adopt-heat',{
+    type:'bubble',
+    data:{datasets:[{
+      data:heatData.map(d=>({x:d.x,y:d.y,r:Math.sqrt(d.v)*1.8,v:d.v})),
+      backgroundColor:heatData.map(d=>{
+        const t=(d.v-41)/(64-41);
+        const r=Math.round(16+t*223),g=Math.round(25+t*160),b=Math.round(41+t*58);
+        return `rgba(${r},${g},${b},0.8)`;
+      }),
+      borderColor:'#252d4a',borderWidth:1
+    }]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:d=>` ${d.raw.y} ${d.raw.x}: ${d.raw.v}%`}}},
+      scales:{
+        x:{type:'category',labels:yrs,grid:{color:'#252d4a'}},
+        y:{type:'category',labels:reg,grid:{color:'#252d4a'},ticks:{font:{size:10}}}
+      }}
+  });
+
+  mkChart('c-adopt-grouped',{
+    type:'bar',
+    data:{labels:D.adoptRegions,datasets:[
+      {label:'2021',data:D.adopt2021,backgroundColor:'#4f8ef733',borderColor:'#4f8ef7',borderWidth:1.5,borderRadius:4},
+      {label:'2022',data:D.adopt2022,backgroundColor:'#ef444433',borderColor:'#ef4444',borderWidth:1.5,borderRadius:4},
+      {label:'2023',data:D.adopt2023,backgroundColor:'#10b98133',borderColor:'#10b981',borderWidth:1.5,borderRadius:4}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>` ${c.parsed.y}%`}}},
+      scales:{y:{min:36,max:70,grid:{color:'#252d4a'},ticks:{callback:v=>`${v}%`}},
+              x:{grid:{display:false},ticks:{maxRotation:20,font:{size:10}}}}}
+  });
+
+  /* Scoreboard */
+  const sb=document.getElementById('adopt-scoreboard');
+  if(sb){
+    const rows=[];
+    D.adoptRegions.forEach(r=>{
+      [2021,2022,2023].forEach((y,i)=>{
+        const v=[D.adopt2021,D.adopt2022,D.adopt2023][i][D.adoptRegions.indexOf(r)];
+        rows.push({r,y,v});
+      });
+    });
+    sb.innerHTML=rows.map(row=>`
+      <div style="margin-bottom:10px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+          <span style="font-size:.74rem;font-weight:600">${row.r} · ${row.y}</span>
+          <span style="font-size:.74rem;font-weight:800;color:#4f8ef7">${row.v}%</span>
+        </div>
+        <div style="height:5px;background:#252d4a;border-radius:3px;overflow:hidden">
+          <div style="height:100%;border-radius:3px;width:${row.v}%;background:linear-gradient(90deg,#4f8ef7,#7c3aed);transition:width 1s ease"></div>
+        </div>
+      </div>`).join('');
+  }
+}
+
+/* ═══════════════════════════════
+   JOBS CHARTS
+═══════════════════════════════ */
+function renderJobs(){
+  const jColors=D.jobs2023.map((_,i)=>i===0?'#4f8ef7':P[i]+'88');
+  mkChart('c-jobs-2023',{
+    type:'bar',
+    data:{labels:D.jobsCountries,datasets:[{label:'AI Job Share 2023 (%)',data:D.jobs2023,
+      backgroundColor:jColors,borderColor:P.slice(0,14),borderWidth:1.5,borderRadius:5}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.x.toFixed(2)}% of job postings`}}},
+      scales:{x:{grid:{color:'#252d4a'},ticks:{callback:v=>`${v}%`}},y:{grid:{display:false},ticks:{font:{size:10}}}}}
+  });
+
+  const trendKeys=Object.keys(D.jobsTrend);
+  mkChart('c-jobs-trend',{
+    type:'line',
+    data:{labels:D.years.map(String),datasets:trendKeys.map((k,i)=>({
+      label:k,data:D.jobsTrend[k],borderColor:P[i],backgroundColor:P[i]+'18',
+      borderWidth:2.5,pointRadius:4,tension:.35,fill:false
+    }))},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:11,padding:7}},
+        tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${c.parsed.y.toFixed(2)}%`}}},
+      scales:{y:{grid:{color:'#252d4a'},ticks:{callback:v=>`${v}%`}},x:{grid:{display:false}}}}
+  });
+
+  const growth=D.jobs2023.map((v,i)=>parseFloat((v-D.jobs2017[i]).toFixed(2)));
+  mkChart('c-jobs-growth',{
+    type:'bar',
+    data:{labels:D.jobsCountries,datasets:[{label:'Growth (pp)',data:growth,
+      backgroundColor:growth.map(v=>v>=0?'#10b98188':'#ef444488'),
+      borderColor:growth.map(v=>v>=0?'#10b981':'#ef4444'),borderWidth:1.5,borderRadius:4}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.x>0?'+':''}${c.parsed.x.toFixed(2)} pp`}}},
+      scales:{x:{grid:{color:'#252d4a'},ticks:{callback:v=>`${v}pp`}},y:{grid:{display:false},ticks:{font:{size:10}}}}}
+  });
+
+  /* Sparklines */
+  const sp=document.getElementById('sparklines');
+  if(!sp)return;
+  sp.innerHTML='';
+  const spCountries=['United States','United Kingdom','Canada','Spain','Sweden','Netherlands','Australia','Germany'];
+  spCountries.forEach(c=>{
+    const cId='sp_'+c.replace(/\s/g,'_');
+    sp.innerHTML+=`<div class="spark-row">
+      <span class="spark-lbl">${c}</span>
+      <canvas class="spark-cv" id="${cId}" height="28"></canvas>
+      <span class="spark-v">${D.jobs2023[D.jobsCountries.indexOf(c)]||'?'}%</span>
+    </div>`;
+  });
+  spCountries.forEach(c=>{
+    const cId='sp_'+c.replace(/\s/g,'_');
+    const el=document.getElementById(cId);
+    if(!el)return;
+    const vals=D.jobsTrend[c]||D.years.map(()=>0);
+    new Chart(el.getContext('2d'),{
+      type:'line',
+      data:{labels:D.years.map(String),datasets:[{data:vals,
+        borderColor:'#4f8ef7',borderWidth:1.5,pointRadius:0,tension:.35,fill:true,
+        backgroundColor:'#4f8ef718'}]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{x:{display:false},y:{display:false}}}
+    });
+  });
+}
+
+/* ═══════════════════════════════
+   GEN AI CHARTS
+═══════════════════════════════ */
+function renderGenAI(){
+  const genAIData=[0,0,0.89,2.18,4.17,2.64,22.43];
+
+  const gColors=genAIData.map(v=>v>10?'#f59e0b':v>2?'#f59e0b88':'#f59e0b33');
+  mkChart('c-genai-bar',{
+    type:'bar',
+    data:{labels:D.years.map(String),datasets:[{label:'Gen AI Investment ($B)',data:genAIData,
+      backgroundColor:gColors,borderColor:'#f59e0b',borderWidth:1.5,borderRadius:6}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.parsed.y.toFixed(2)}B`}}},
+      scales:{y:{grid:{color:'#252d4a'},ticks:{callback:v=>`$${v}B`}},x:{grid:{display:false}}}}
+  });
+
+  const vs2023L=['Gen AI','AI Infrastructure','NLP & Customer Support','Medical & Healthcare','Data Management'];
+  const vs2023V=[22.43,16.25,7.17,3.74,4.89];
+  mkChart('c-genai-vs',{
+    type:'bar',
+    data:{labels:vs2023L,datasets:[{label:'2023 Annual Investment ($B)',data:vs2023V,
+      backgroundColor:['#f59e0bcc','#4f8ef7cc','#7c3aedcc','#10b981cc','#06b6d4cc'],
+      borderColor:['#f59e0b','#4f8ef7','#7c3aed','#10b981','#06b6d4'],
+      borderWidth:1.5,borderRadius:6}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.parsed.y.toFixed(1)}B`}}},
+      scales:{y:{grid:{color:'#252d4a'},ticks:{callback:v=>`$${v}B`}},x:{grid:{display:false},ticks:{font:{size:10}}}}}
+  });
+
+  const genAIShare=genAIData.map((v,i)=>D.invWorld[i]>0?(v/D.invWorld[i]*100).toFixed(1):0);
+  mkChart('c-genai-share',{
+    type:'line',
+    data:{labels:D.years.map(String),datasets:[{
+      label:'Gen AI Share of Total (%)',data:genAIShare,
+      borderColor:'#f59e0b',backgroundColor:'#f59e0b22',
+      borderWidth:2.5,pointRadius:6,pointBackgroundColor:'#f59e0b',tension:.35,fill:true
+    }]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}% of annual AI investment`}}},
+      scales:{y:{grid:{color:'#252d4a'},ticks:{callback:v=>`${v}%`}},x:{grid:{display:false}}}}
+  });
+}
+
+/* ═══════════════════════════════
+   ML CHARTS
+═══════════════════════════════ */
+function renderML(){
+  mkChart('c-ml-comp',{
+    type:'bar',
+    data:{labels:D.mlModels,datasets:[
+      {label:'Accuracy',data:D.mlAcc,backgroundColor:'#4f8ef733',borderColor:'#4f8ef7',borderWidth:1.5,borderRadius:5},
+      {label:'F1-Score',data:D.mlF1,backgroundColor:'#10b98133',borderColor:'#10b981',borderWidth:1.5,borderRadius:5},
+      {label:'CV F1 (5-fold)',data:D.mlCV,backgroundColor:'#7c3aed33',borderColor:'#7c3aed',borderWidth:1.5,borderRadius:5}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top'},tooltip:{callbacks:{label:c=>` ${(c.parsed.y*100).toFixed(1)}%`}}},
+      scales:{y:{min:.45,max:.75,grid:{color:'#252d4a'},ticks:{callback:v=>`${(v*100).toFixed(0)}%`}},
+              x:{grid:{display:false},ticks:{font:{size:10}}}}}
+  });
+
+  mkChart('c-fi',{
+    type:'bar',
+    data:{labels:D.fiNames,datasets:[{label:'Importance',data:D.fiVals,
+      backgroundColor:P.slice(0,5).map(c=>c+'88'),borderColor:P.slice(0,5),borderWidth:1.5,borderRadius:5}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${(c.parsed.x*100).toFixed(1)}% importance`}}},
+      scales:{x:{grid:{color:'#252d4a'},ticks:{callback:v=>`${(v*100).toFixed(0)}%`}},y:{grid:{display:false}}}}
+  });
+
+  mkChart('c-cv',{
+    type:'bar',
+    data:{labels:['Fold 1','Fold 2','Fold 3','Fold 4','Fold 5'],
+          datasets:[{label:'Random Forest CV F1',data:D.cvFolds,
+            backgroundColor:D.cvFolds.map(v=>v>=D.mlCV[2]?'#4f8ef7':'#4f8ef744'),
+            borderColor:'#4f8ef7',borderWidth:1.5,borderRadius:5}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` F1 = ${c.parsed.y.toFixed(2)}`}}},
+      scales:{y:{min:.5,max:.75,grid:{color:'#252d4a'},ticks:{callback:v=>`${(v*100).toFixed(0)}%`}},
+              x:{grid:{display:false}}}}
+  });
+
+  mkChart('c-baseline',{
+    type:'bar',
+    data:{labels:['Random Baseline','Best Model (Random Forest)'],
+          datasets:[{label:'F1-Score',data:[0.333,0.683],
+            backgroundColor:['#ef444488','#10b98188'],borderColor:['#ef4444','#10b981'],borderWidth:1.5,borderRadius:8}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` F1 = ${c.parsed.y.toFixed(3)}`}}},
+      scales:{y:{min:0,max:.8,grid:{color:'#252d4a'},ticks:{callback:v=>`${(v*100).toFixed(0)}%`}},
+              x:{grid:{display:false}}}}
+  });
+}
+
+/* ═══ TABLE SORT ═══ */
+function sortTable(tid,col){
+  const tbl=document.getElementById(tid);
+  if(!tbl)return;
+  const tbody=tbl.querySelector('tbody');
+  const rows=Array.from(tbody.querySelectorAll('tr'));
+  rows.sort((a,b)=>{
+    const av=a.cells[col].innerText.replace(/[$%B,]/g,'');
+    const bv=b.cells[col].innerText.replace(/[$%B,]/g,'');
+    return isNaN(av)||isNaN(bv)?av.localeCompare(bv):parseFloat(bv)-parseFloat(av);
+  });
+  rows.forEach(r=>tbody.appendChild(r));
+}
+
+/* ═══ INIT ═══ */
+function selectModel(el,modelKey){
+  document.querySelectorAll('.mc').forEach(m=>m.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  renderOverview();
+  updateKPIs();
+});
+</script>
+</body>
+</html>

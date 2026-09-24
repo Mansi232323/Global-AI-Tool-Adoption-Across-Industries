@@ -1,0 +1,568 @@
+country,year,sector,investment_usd,sector_label,log_investment_usd,investment_tier,industry_group,period,investment_bn
+China,2017,agritech,11054594,AgriTech,7.043542796955663,Low,Agriculture,2017-2018,0.011054594
+China,2020,agritech,94228066,AgriTech,7.97418027745853,Low,Agriculture,2019-2020,0.094228066
+China,2021,agritech,140000000,AgriTech,8.146128035678238,Medium,Agriculture,2021-2023,0.14
+China,2022,agritech,92590197,AgriTech,7.96656500812714,Low,Agriculture,2021-2023,0.092590197
+China,2023,agritech,8892956,AgriTech,6.949046143546466,Low,Agriculture,2021-2023,0.008892956
+China,2019,ai_infrastructure_research_governance,31796818,AI Infrastructure,7.502383661047774,Low,Technology,2019-2020,0.031796818
+China,2020,ai_infrastructure_research_governance,31409355,AI Infrastructure,7.497059018129897,Low,Technology,2019-2020,0.031409355
+China,2021,ai_infrastructure_research_governance,50000000,AI Infrastructure,7.698970004336019,Low,Technology,2021-2023,0.05
+China,2022,ai_infrastructure_research_governance,74072158,AI Infrastructure,7.869654997464335,Low,Technology,2021-2023,0.074072158
+China,2023,ai_infrastructure_research_governance,26678868,AI Infrastructure,7.426167398266128,Low,Technology,2021-2023,0.026678868
+China,2017,ar_vr,66327565,AR/VR,7.821694053887029,Low,Technology,2017-2018,0.066327565
+China,2018,ar_vr,10791015,AR/VR,7.03306229622761,Low,Technology,2017-2018,0.010791015
+China,2019,ar_vr,148385152,AR/VR,8.171390445908758,Medium,Technology,2019-2020,0.148385152
+China,2020,ar_vr,492079898,AR/VR,8.69203562399366,Medium,Technology,2019-2020,0.492079898
+China,2021,ar_vr,130000000,AR/VR,8.113943352306837,Medium,Technology,2021-2023,0.13
+China,2022,ar_vr,74072158,AR/VR,7.869654997464335,Low,Technology,2021-2023,0.074072158
+China,2023,ar_vr,8892956,AR/VR,6.949046143546466,Low,Technology,2021-2023,0.008892956
+China,2017,av,77382159,Autonomous Vehicles,7.888640842582253,Low,Transportation & Logistics,2017-2018,0.077382159
+China,2018,av,302148417,Autonomous Vehicles,8.480220323257765,Medium,Transportation & Logistics,2017-2018,0.302148417
+China,2019,av,84791516,Autonomous Vehicles,7.928352400149269,Low,Transportation & Logistics,2019-2020,0.084791516
+China,2020,av,73288495,Autonomous Vehicles,7.865035803424491,Low,Transportation & Logistics,2019-2020,0.073288495
+China,2021,av,1790000000,Autonomous Vehicles,9.252853030979892,High,Transportation & Logistics,2021-2023,1.79
+China,2022,av,462950987,Autonomous Vehicles,8.66553501433936,Medium,Transportation & Logistics,2021-2023,0.462950987
+China,2023,av,249002768,Autonomous Vehicles,8.396204174888686,Medium,Transportation & Logistics,2021-2023,0.249002768
+China,2017,creative__music__video_content,110545942,Creative Content,8.04354280481293,Low,Media & Marketing,2017-2018,0.110545942
+China,2018,creative__music__video_content,442431610,Creative Content,8.645846148039304,Medium,Media & Marketing,2017-2018,0.44243161
+China,2019,creative__music__video_content,307369244,Creative Content,8.48766040893687,Medium,Media & Marketing,2019-2020,0.307369244
+China,2020,creative__music__video_content,136107206,Creative Content,8.133881118907897,Medium,Media & Marketing,2019-2020,0.136107206
+China,2021,creative__music__video_content,260000000,Creative Content,8.414973347970818,Medium,Media & Marketing,2021-2023,0.26
+China,2022,creative__music__video_content,305547652,Creative Content,8.485078950705619,Medium,Media & Marketing,2021-2023,0.305547652
+China,2023,creative__music__video_content,17785912,Creative Content,7.250076139210447,Low,Media & Marketing,2021-2023,0.017785912
+China,2017,cybersecurity__data_protection,33163783,Cybersecurity,7.52066406477077,Low,Technology,2017-2018,0.033163783
+China,2020,cybersecurity__data_protection,62818710,Cybersecurity,7.798089013793878,Low,Technology,2019-2020,0.06281871
+China,2021,cybersecurity__data_protection,250000000,Cybersecurity,8.397940008672037,Medium,Technology,2021-2023,0.25
+China,2022,cybersecurity__data_protection,55554118,Cybersecurity,7.744716256947283,Low,Technology,2021-2023,0.055554118
+China,2017,data_management__processing,55272971,Data Management,7.742512809148949,Low,Technology,2017-2018,0.055272971
+China,2018,data_management__processing,32373045,Data Management,7.510183550947271,Low,Technology,2017-2018,0.032373045
+China,2019,data_management__processing,211978789,Data Management,8.326292406772541,Medium,Technology,2019-2020,0.211978789
+China,2020,data_management__processing,554898609,Data Management,8.744213636141646,High,Technology,2019-2020,0.554898609
+China,2021,data_management__processing,1280000000,Data Management,9.107209969647869,High,Technology,2021-2023,1.28
+China,2022,data_management__processing,555541185,Data Management,8.744716260856034,High,Technology,2021-2023,0.555541185
+China,2023,data_management__processing,329039372,Data Management,8.517247867613461,Medium,Technology,2021-2023,0.329039372
+China,2017,drones,44218377,Drones,7.645602798105209,Low,Transportation & Logistics,2017-2018,0.044218377
+China,2018,drones,32373045,Drones,7.510183550947271,Low,Transportation & Logistics,2017-2018,0.032373045
+China,2019,drones,42395758,Drones,7.627322404485287,Low,Transportation & Logistics,2019-2020,0.042395758
+China,2020,drones,94228066,Drones,7.97418027745853,Low,Transportation & Logistics,2019-2020,0.094228066
+China,2021,drones,60000000,Drones,7.778151250383644,Low,Transportation & Logistics,2021-2023,0.06
+China,2022,drones,74072158,Drones,7.869654997464335,Low,Transportation & Logistics,2021-2023,0.074072158
+China,2023,drones,44464780,Drones,7.648016147882485,Low,Transportation & Logistics,2021-2023,0.04446478
+China,2017,ed_tech,530620521,EdTech,8.724784041697438,High,Education,2017-2018,0.530620521
+China,2018,ed_tech,874072205,EdTech,8.941547310137626,High,Education,2017-2018,0.874072205
+China,2019,ed_tech,646535306,EdTech,8.810592245817052,High,Education,2019-2020,0.646535306
+China,2020,ed_tech,136107206,EdTech,8.133881118907897,Medium,Education,2019-2020,0.136107206
+China,2021,ed_tech,490000000,EdTech,8.690196080028514,Medium,Education,2021-2023,0.49
+China,2022,ed_tech,314806671,EdTech,8.498043926824867,Medium,Education,2021-2023,0.314806671
+China,2023,ed_tech,80036604,EdTech,7.903288652985791,Low,Education,2021-2023,0.080036604
+China,2017,energy__oil__and_gas,55272971,Energy & Oil/Gas,7.742512809148949,Low,Energy,2017-2018,0.055272971
+China,2018,energy__oil__and_gas,194238268,Energy & Oil/Gas,8.288334796859145,Medium,Energy,2017-2018,0.194238268
+China,2019,energy__oil__and_gas,74192576,Energy & Oil/Gas,7.870360450244776,Low,Energy,2019-2020,0.074192576
+China,2020,energy__oil__and_gas,209395701,Energy & Oil/Gas,8.320967761148253,Medium,Energy,2019-2020,0.209395701
+China,2021,energy__oil__and_gas,650000000,Energy & Oil/Gas,8.812913356642856,High,Energy,2021-2023,0.65
+China,2022,energy__oil__and_gas,425914908,Energy & Oil/Gas,8.629322841644127,Medium,Energy,2021-2023,0.425914908
+China,2023,energy__oil__and_gas,320146416,Energy & Oil/Gas,8.505348644313754,Medium,Energy,2021-2023,0.320146416
+China,2017,entertainment,198982695,Entertainment,8.298815308606692,Medium,Media & Marketing,2017-2018,0.198982695
+China,2018,entertainment,75537104,Entertainment,7.878160330492447,Low,Media & Marketing,2017-2018,0.075537104
+China,2021,entertainment,50000000,Entertainment,7.698970004336019,Low,Media & Marketing,2021-2023,0.05
+China,2023,entertainment,17785912,Entertainment,7.250076139210447,Low,Media & Marketing,2021-2023,0.017785912
+China,2017,facial_recognition,331637825,Facial Recognition,8.520664058223048,Medium,Technology,2017-2018,0.331637825
+China,2018,facial_recognition,1694189336,Facial Recognition,9.228961943766317,High,Technology,2017-2018,1.694189336
+China,2019,facial_recognition,752524701,Facial Recognition,8.876520759856492,High,Technology,2019-2020,0.752524701
+China,2020,facial_recognition,617717319,Facial Recognition,8.790789777864632,High,Technology,2019-2020,0.617717319
+China,2021,facial_recognition,3040000000,Facial Recognition,9.482873583608754,High,Technology,2021-2023,3.04
+China,2022,facial_recognition,55554118,Facial Recognition,7.744716256947283,Low,Technology,2021-2023,0.055554118
+China,2023,facial_recognition,115608428,Facial Recognition,8.062989495853303,Medium,Technology,2021-2023,0.115608428
+China,2017,fintech,187928101,FinTech,8.27399172526682,Medium,Financial Services,2017-2018,0.187928101
+China,2018,fintech,53955074,FinTech,7.732032292514441,Low,Financial Services,2017-2018,0.053955074
+China,2019,fintech,222577728,FinTech,8.347481704964439,Medium,Financial Services,2019-2020,0.222577728
+China,2020,fintech,157046776,FinTech,8.196029025231299,Medium,Financial Services,2019-2020,0.157046776
+China,2021,fintech,550000000,FinTech,8.740362689494244,High,Financial Services,2021-2023,0.55
+China,2022,fintech,55554118,FinTech,7.744716256947283,Low,Financial Services,2021-2023,0.055554118
+China,2023,fintech,35571824,FinTech,7.551106134874428,Low,Financial Services,2021-2023,0.035571824
+China,2018,fitness_and_wellness,53955074,Fitness & Wellness,7.732032292514441,Low,Healthcare,2017-2018,0.053955074
+China,2018,insurtech,64746089,InsurTech,7.811213539903597,Low,Financial Services,2017-2018,0.064746089
+China,2019,insurtech,21197879,InsurTech,7.326292408821306,Low,Financial Services,2019-2020,0.021197879
+China,2020,insurtech,73288495,InsurTech,7.865035803424491,Low,Financial Services,2019-2020,0.073288495
+China,2021,insurtech,180000000,InsurTech,8.255272505103306,Medium,Financial Services,2021-2023,0.18
+China,2022,insurtech,166662355,InsurTech,8.22183751427278,Medium,Financial Services,2021-2023,0.166662355
+China,2018,legal_tech,10791015,LegalTech,7.03306229622761,Low,Professional Services,2017-2018,0.010791015
+China,2019,legal_tech,10598939,LegalTech,7.025262392669686,Low,Professional Services,2019-2020,0.010598939
+China,2020,legal_tech,41879140,LegalTech,7.621997754738197,Low,Professional Services,2019-2020,0.04187914
+China,2021,legal_tech,30000000,LegalTech,7.477121254719663,Low,Professional Services,2021-2023,0.03
+China,2023,legal_tech,8892956,LegalTech,6.949046143546466,Low,Professional Services,2021-2023,0.008892956
+China,2017,manufacturing,11054594,Manufacturing,7.043542796955663,Low,Manufacturing,2017-2018,0.011054594
+China,2018,manufacturing,205029283,Manufacturing,8.311815892944024,Medium,Manufacturing,2017-2018,0.205029283
+China,2019,manufacturing,31796818,Manufacturing,7.502383661047774,Low,Manufacturing,2019-2020,0.031796818
+China,2020,manufacturing,314093552,Manufacturing,8.49705902089528,Medium,Manufacturing,2019-2020,0.314093552
+China,2021,manufacturing,220000000,Manufacturing,8.342422680822207,Medium,Manufacturing,2021-2023,0.22
+China,2022,manufacturing,305547652,Manufacturing,8.485078950705619,Medium,Manufacturing,2021-2023,0.305547652
+China,2023,manufacturing,471326668,Manufacturing,8.673322013147255,Medium,Manufacturing,2021-2023,0.471326668
+China,2017,marketing__digital_ads,22109188,Marketing & Digital Ads,7.344572792619644,Low,Media & Marketing,2017-2018,0.022109188
+China,2018,marketing__digital_ads,21582030,Marketing & Digital Ads,7.33409229189159,Low,Media & Marketing,2017-2018,0.02158203
+China,2019,marketing__digital_ads,31796818,Marketing & Digital Ads,7.502383661047774,Low,Media & Marketing,2019-2020,0.031796818
+China,2020,marketing__digital_ads,125637421,Marketing & Digital Ads,8.099119012914588,Medium,Media & Marketing,2019-2020,0.125637421
+China,2021,marketing__digital_ads,80000000,Marketing & Digital Ads,7.903089986991944,Low,Media & Marketing,2021-2023,0.08
+China,2022,marketing__digital_ads,37036079,Marketing & Digital Ads,7.568625001800354,Low,Media & Marketing,2021-2023,0.037036079
+China,2023,marketing__digital_ads,364611196,Marketing & Digital Ads,8.561830000266202,Medium,Media & Marketing,2021-2023,0.364611196
+China,2017,medical_and_healthcare,99491348,Medical & Healthcare,7.9977853151252845,Low,Healthcare,2017-2018,0.099491348
+China,2018,medical_and_healthcare,194238268,Medical & Healthcare,8.288334796859145,Medium,Healthcare,2017-2018,0.194238268
+China,2019,medical_and_healthcare,264973486,Medical & Healthcare,8.423202419370845,Medium,Healthcare,2019-2020,0.264973486
+China,2020,medical_and_healthcare,1046978507,Medical & Healthcare,9.019937766313886,High,Healthcare,2019-2020,1.046978507
+China,2021,medical_and_healthcare,2670000000,Medical & Healthcare,9.426511261364576,High,Healthcare,2021-2023,2.67
+China,2022,medical_and_healthcare,1333298843,Medical & Healthcare,9.124927502241912,High,Healthcare,2021-2023,1.333298843
+China,2023,medical_and_healthcare,426861888,Medical & Healthcare,8.630287380922054,Medium,Healthcare,2021-2023,0.426861888
+China,2017,nlp__customer_support,254255666,NLP & Customer Support,8.405270639805662,Medium,Technology,2017-2018,0.254255666
+China,2018,nlp__customer_support,1564697158,NLP & Customer Support,9.194430293744094,High,Technology,2017-2018,1.564697158
+China,2019,nlp__customer_support,561743791,NLP & Customer Support,8.749538280825318,High,Technology,2019-2020,0.561743791
+China,2020,nlp__customer_support,774764095,NLP & Customer Support,8.889169485943963,High,Technology,2019-2020,0.774764095
+China,2021,nlp__customer_support,2980000000,NLP & Customer Support,9.474216264076254,High,Technology,2021-2023,2.98
+China,2022,nlp__customer_support,648131382,NLP & Customer Support,8.811663050151612,High,Technology,2021-2023,0.648131382
+China,2023,nlp__customer_support,533577360,NLP & Customer Support,8.72719739393011,High,Technology,2021-2023,0.53357736
+China,2017,quantum_computing,77382159,Quantum Computing,7.888640842582253,Low,Technology,2017-2018,0.077382159
+China,2021,quantum_computing,50000000,Quantum Computing,7.698970004336019,Low,Technology,2021-2023,0.05
+China,2022,quantum_computing,138885296,Quantum Computing,8.142656268746322,Medium,Technology,2021-2023,0.138885296
+China,2017,retail,66327565,Retail,7.821694053887029,Low,Retail & Consumer,2017-2018,0.066327565
+China,2018,retail,64746089,Retail,7.811213539903597,Low,Retail & Consumer,2017-2018,0.064746089
+China,2019,retail,74192576,Retail,7.870360450244776,Low,Retail & Consumer,2019-2020,0.074192576
+China,2020,retail,397851833,Retail,8.59972136330184,Medium,Retail & Consumer,2019-2020,0.397851833
+China,2021,retail,90000000,Retail,7.954242509439325,Low,Retail & Consumer,2021-2023,0.09
+China,2022,retail,46295099,Retail,7.665535017153661,Low,Retail & Consumer,2021-2023,0.046295099
+China,2023,retail,106715472,Retail,8.028227389594091,Low,Retail & Consumer,2021-2023,0.106715472
+European Union and United Kingdom,2022,agritech,92590197,AgriTech,7.96656500812714,Low,Agriculture,2021-2023,0.092590197
+European Union and United Kingdom,2023,agritech,115608428,AgriTech,8.062989495853303,Medium,Agriculture,2021-2023,0.115608428
+European Union and United Kingdom,2019,ai_infrastructure_research_governance,116588334,AI Infrastructure,8.066655096453037,Medium,Technology,2019-2020,0.116588334
+European Union and United Kingdom,2020,ai_infrastructure_research_governance,10469785,AI Infrastructure,7.019937763410234,Low,Technology,2019-2020,0.010469785
+European Union and United Kingdom,2021,ai_infrastructure_research_governance,260000000,AI Infrastructure,8.414973347970818,Medium,Technology,2021-2023,0.26
+European Union and United Kingdom,2022,ai_infrastructure_research_governance,18518039,AI Infrastructure,7.267594994410118,Low,Technology,2021-2023,0.018518039
+European Union and United Kingdom,2023,ai_infrastructure_research_governance,8892956,AI Infrastructure,6.949046143546466,Low,Technology,2021-2023,0.008892956
+European Union and United Kingdom,2019,ar_vr,10598939,AR/VR,7.025262392669686,Low,Technology,2019-2020,0.010598939
+European Union and United Kingdom,2021,ar_vr,10000000,AR/VR,7.0,Low,Technology,2021-2023,0.01
+European Union and United Kingdom,2022,ar_vr,18518039,AR/VR,7.267594994410118,Low,Technology,2021-2023,0.018518039
+European Union and United Kingdom,2023,ar_vr,35571824,AR/VR,7.551106134874428,Low,Technology,2021-2023,0.035571824
+European Union and United Kingdom,2017,av,33163783,Autonomous Vehicles,7.52066406477077,Low,Transportation & Logistics,2017-2018,0.033163783
+European Union and United Kingdom,2019,av,42395758,Autonomous Vehicles,7.627322404485287,Low,Transportation & Logistics,2019-2020,0.042395758
+European Union and United Kingdom,2020,av,136107206,Autonomous Vehicles,8.133881118907897,Medium,Transportation & Logistics,2019-2020,0.136107206
+European Union and United Kingdom,2021,av,120000000,Autonomous Vehicles,8.079181246047625,Medium,Transportation & Logistics,2021-2023,0.12
+European Union and United Kingdom,2022,av,398137849,Autonomous Vehicles,8.600033465779275,Medium,Transportation & Logistics,2021-2023,0.398137849
+European Union and United Kingdom,2023,av,17785912,Autonomous Vehicles,7.250076139210447,Low,Transportation & Logistics,2021-2023,0.017785912
+European Union and United Kingdom,2017,creative__music__video_content,11054594,Creative Content,7.043542796955663,Low,Media & Marketing,2017-2018,0.011054594
+European Union and United Kingdom,2019,creative__music__video_content,21197879,Creative Content,7.326292408821306,Low,Media & Marketing,2019-2020,0.021197879
+European Union and United Kingdom,2020,creative__music__video_content,41879140,Creative Content,7.621997754738197,Low,Media & Marketing,2019-2020,0.04187914
+European Union and United Kingdom,2021,creative__music__video_content,150000000,Creative Content,8.176091259055681,Medium,Media & Marketing,2021-2023,0.15
+European Union and United Kingdom,2022,creative__music__video_content,240734513,Creative Content,8.381538357541189,Medium,Media & Marketing,2021-2023,0.240734513
+European Union and United Kingdom,2023,creative__music__video_content,346825284,Creative Content,8.540110750572966,Medium,Media & Marketing,2021-2023,0.346825284
+European Union and United Kingdom,2017,cybersecurity__data_protection,88436753,Cybersecurity,7.946632788858398,Low,Technology,2017-2018,0.088436753
+European Union and United Kingdom,2018,cybersecurity__data_protection,75537104,Cybersecurity,7.878160330492447,Low,Technology,2017-2018,0.075537104
+European Union and United Kingdom,2020,cybersecurity__data_protection,104697851,Cybersecurity,8.019937767558309,Low,Technology,2019-2020,0.104697851
+European Union and United Kingdom,2021,cybersecurity__data_protection,70000000,Cybersecurity,7.845098040014257,Low,Technology,2021-2023,0.07
+European Union and United Kingdom,2022,cybersecurity__data_protection,9259020,Cybersecurity,6.966565022198645,Low,Technology,2021-2023,0.00925902
+European Union and United Kingdom,2023,cybersecurity__data_protection,480219624,Cybersecurity,8.681439903369434,Medium,Technology,2021-2023,0.480219624
+European Union and United Kingdom,2017,data_management__processing,33163783,Data Management,7.52066406477077,Low,Technology,2017-2018,0.033163783
+European Union and United Kingdom,2018,data_management__processing,53955074,Data Management,7.732032292514441,Low,Technology,2017-2018,0.053955074
+European Union and United Kingdom,2019,data_management__processing,10598939,Data Management,7.025262392669686,Low,Technology,2019-2020,0.010598939
+European Union and United Kingdom,2020,data_management__processing,115167636,Data Management,8.061330452339437,Medium,Technology,2019-2020,0.115167636
+European Union and United Kingdom,2021,data_management__processing,150000000,Data Management,8.176091259055681,Medium,Technology,2021-2023,0.15
+European Union and United Kingdom,2022,data_management__processing,314806671,Data Management,8.498043926824867,Medium,Technology,2021-2023,0.314806671
+European Union and United Kingdom,2023,data_management__processing,160073208,Data Management,8.204318648649773,Medium,Technology,2021-2023,0.160073208
+European Union and United Kingdom,2018,drones,21582030,Drones,7.33409229189159,Low,Transportation & Logistics,2017-2018,0.02158203
+European Union and United Kingdom,2019,drones,31796818,Drones,7.502383661047774,Low,Transportation & Logistics,2019-2020,0.031796818
+European Union and United Kingdom,2022,drones,9259020,Drones,6.966565022198645,Low,Transportation & Logistics,2021-2023,0.00925902
+European Union and United Kingdom,2023,drones,17785912,Drones,7.250076139210447,Low,Transportation & Logistics,2021-2023,0.017785912
+European Union and United Kingdom,2017,ed_tech,33163783,EdTech,7.52066406477077,Low,Education,2017-2018,0.033163783
+European Union and United Kingdom,2018,ed_tech,10791015,EdTech,7.03306229622761,Low,Education,2017-2018,0.010791015
+European Union and United Kingdom,2019,ed_tech,31796818,EdTech,7.502383661047774,Low,Education,2019-2020,0.031796818
+European Union and United Kingdom,2020,ed_tech,83758281,EdTech,7.923027755587271,Low,Education,2019-2020,0.083758281
+European Union and United Kingdom,2021,ed_tech,170000000,EdTech,8.230448921378274,Medium,Education,2021-2023,0.17
+European Union and United Kingdom,2022,ed_tech,111108237,EdTech,8.045746256520015,Low,Education,2021-2023,0.111108237
+European Union and United Kingdom,2023,ed_tech,133394340,EdTech,8.125137402602148,Medium,Education,2021-2023,0.13339434
+European Union and United Kingdom,2018,energy__oil__and_gas,32373045,Energy & Oil/Gas,7.510183550947271,Low,Energy,2017-2018,0.032373045
+European Union and United Kingdom,2019,energy__oil__and_gas,31796818,Energy & Oil/Gas,7.502383661047774,Low,Energy,2019-2020,0.031796818
+European Union and United Kingdom,2020,energy__oil__and_gas,52348925,Energy & Oil/Gas,7.718907767746253,Low,Energy,2019-2020,0.052348925
+European Union and United Kingdom,2021,energy__oil__and_gas,100000000,Energy & Oil/Gas,8.0,Low,Energy,2021-2023,0.1
+European Union and United Kingdom,2022,energy__oil__and_gas,148144316,Energy & Oil/Gas,8.170684993128315,Medium,Energy,2021-2023,0.148144316
+European Union and United Kingdom,2023,energy__oil__and_gas,240109812,Energy & Oil/Gas,8.380409907705454,Medium,Energy,2021-2023,0.240109812
+European Union and United Kingdom,2018,entertainment,21582030,Entertainment,7.33409229189159,Low,Media & Marketing,2017-2018,0.02158203
+European Union and United Kingdom,2019,entertainment,63593637,Entertainment,7.803413663540969,Low,Media & Marketing,2019-2020,0.063593637
+European Union and United Kingdom,2020,entertainment,20939570,Entertainment,7.3209677590742155,Low,Media & Marketing,2019-2020,0.02093957
+European Union and United Kingdom,2021,entertainment,110000000,Entertainment,8.041392685158225,Low,Media & Marketing,2021-2023,0.11
+European Union and United Kingdom,2022,entertainment,83331178,Entertainment,7.920807521214633,Low,Media & Marketing,2021-2023,0.083331178
+European Union and United Kingdom,2023,entertainment,160073208,Entertainment,8.204318648649773,Medium,Media & Marketing,2021-2023,0.160073208
+European Union and United Kingdom,2017,facial_recognition,11054594,Facial Recognition,7.043542796955663,Low,Technology,2017-2018,0.011054594
+European Union and United Kingdom,2019,facial_recognition,21197879,Facial Recognition,7.326292408821306,Low,Technology,2019-2020,0.021197879
+European Union and United Kingdom,2021,facial_recognition,20000000,Facial Recognition,7.301029995663981,Low,Technology,2021-2023,0.02
+European Union and United Kingdom,2022,facial_recognition,37036079,Facial Recognition,7.568625001800354,Low,Technology,2021-2023,0.037036079
+European Union and United Kingdom,2023,facial_recognition,8892956,Facial Recognition,6.949046143546466,Low,Technology,2021-2023,0.008892956
+European Union and United Kingdom,2017,fintech,132655130,FinTech,8.12272404955101,Medium,Financial Services,2017-2018,0.13265513
+European Union and United Kingdom,2018,fintech,21582030,FinTech,7.33409229189159,Low,Financial Services,2017-2018,0.02158203
+European Union and United Kingdom,2019,fintech,116588334,FinTech,8.066655096453037,Medium,Financial Services,2019-2020,0.116588334
+European Union and United Kingdom,2020,fintech,481610113,FinTech,8.682695597797075,Medium,Financial Services,2019-2020,0.481610113
+European Union and United Kingdom,2021,fintech,310000000,FinTech,8.491361693834273,Medium,Financial Services,2021-2023,0.31
+European Union and United Kingdom,2022,fintech,166662355,FinTech,8.22183751427278,Medium,Financial Services,2021-2023,0.166662355
+European Union and United Kingdom,2023,fintech,595828051,FinTech,8.7751209455184,High,Financial Services,2021-2023,0.595828051
+European Union and United Kingdom,2019,fitness_and_wellness,10598939,Fitness & Wellness,7.025262392669686,Low,Healthcare,2019-2020,0.010598939
+European Union and United Kingdom,2021,fitness_and_wellness,20000000,Fitness & Wellness,7.301029995663981,Low,Healthcare,2021-2023,0.02
+European Union and United Kingdom,2022,fitness_and_wellness,9259020,Fitness & Wellness,6.966565022198645,Low,Healthcare,2021-2023,0.00925902
+European Union and United Kingdom,2023,fitness_and_wellness,17785912,Fitness & Wellness,7.250076139210447,Low,Healthcare,2021-2023,0.017785912
+European Union and United Kingdom,2017,insurtech,44218377,InsurTech,7.645602798105209,Low,Financial Services,2017-2018,0.044218377
+European Union and United Kingdom,2018,insurtech,10791015,InsurTech,7.03306229622761,Low,Financial Services,2017-2018,0.010791015
+European Union and United Kingdom,2019,insurtech,95390455,InsurTech,7.979504920320245,Low,Financial Services,2019-2020,0.095390455
+European Union and United Kingdom,2020,insurtech,83758281,InsurTech,7.923027755587271,Low,Financial Services,2019-2020,0.083758281
+European Union and United Kingdom,2021,insurtech,130000000,InsurTech,8.113943352306837,Medium,Financial Services,2021-2023,0.13
+European Union and United Kingdom,2022,insurtech,101849217,InsurTech,8.007957694564594,Low,Financial Services,2021-2023,0.101849217
+European Union and United Kingdom,2023,insurtech,88929560,InsurTech,7.949046143546466,Low,Financial Services,2021-2023,0.08892956
+European Union and United Kingdom,2017,legal_tech,22109188,LegalTech,7.344572792619644,Low,Professional Services,2017-2018,0.022109188
+European Union and United Kingdom,2018,legal_tech,32373045,LegalTech,7.510183550947271,Low,Professional Services,2017-2018,0.032373045
+European Union and United Kingdom,2019,legal_tech,105989395,LegalTech,8.025262413157325,Low,Professional Services,2019-2020,0.105989395
+European Union and United Kingdom,2020,legal_tech,73288495,LegalTech,7.865035803424491,Low,Professional Services,2019-2020,0.073288495
+European Union and United Kingdom,2021,legal_tech,160000000,LegalTech,8.204119982655925,Medium,Professional Services,2021-2023,0.16
+European Union and United Kingdom,2022,legal_tech,120367257,LegalTech,8.080508363681247,Medium,Professional Services,2021-2023,0.120367257
+European Union and United Kingdom,2023,legal_tech,26678868,LegalTech,7.426167398266128,Low,Professional Services,2021-2023,0.026678868
+European Union and United Kingdom,2017,manufacturing,22109188,Manufacturing,7.344572792619644,Low,Manufacturing,2017-2018,0.022109188
+European Union and United Kingdom,2018,manufacturing,10791015,Manufacturing,7.03306229622761,Low,Manufacturing,2017-2018,0.010791015
+European Union and United Kingdom,2019,manufacturing,31796818,Manufacturing,7.502383661047774,Low,Manufacturing,2019-2020,0.031796818
+European Union and United Kingdom,2020,manufacturing,10469785,Manufacturing,7.019937763410234,Low,Manufacturing,2019-2020,0.010469785
+European Union and United Kingdom,2021,manufacturing,130000000,Manufacturing,8.113943352306837,Medium,Manufacturing,2021-2023,0.13
+European Union and United Kingdom,2022,manufacturing,74072158,Manufacturing,7.869654997464335,Low,Manufacturing,2021-2023,0.074072158
+European Union and United Kingdom,2023,manufacturing,80036604,Manufacturing,7.903288652985791,Low,Manufacturing,2021-2023,0.080036604
+European Union and United Kingdom,2017,marketing__digital_ads,33163783,Marketing & Digital Ads,7.52066406477077,Low,Media & Marketing,2017-2018,0.033163783
+European Union and United Kingdom,2018,marketing__digital_ads,21582030,Marketing & Digital Ads,7.33409229189159,Low,Media & Marketing,2017-2018,0.02158203
+European Union and United Kingdom,2019,marketing__digital_ads,52994697,Marketing & Digital Ads,7.724232413395816,Low,Media & Marketing,2019-2020,0.052994697
+European Union and United Kingdom,2020,marketing__digital_ads,62818710,Marketing & Digital Ads,7.798089013793878,Low,Media & Marketing,2019-2020,0.06281871
+European Union and United Kingdom,2021,marketing__digital_ads,160000000,Marketing & Digital Ads,8.204119982655925,Medium,Media & Marketing,2021-2023,0.16
+European Union and United Kingdom,2022,marketing__digital_ads,46295099,Marketing & Digital Ads,7.665535017153661,Low,Media & Marketing,2021-2023,0.046295099
+European Union and United Kingdom,2023,marketing__digital_ads,71143648,Marketing & Digital Ads,7.852136130538409,Low,Media & Marketing,2021-2023,0.071143648
+European Union and United Kingdom,2017,medical_and_healthcare,66327565,Medical & Healthcare,7.821694053887029,Low,Healthcare,2017-2018,0.066327565
+European Union and United Kingdom,2018,medical_and_healthcare,129492179,Medical & Healthcare,8.112243538921406,Medium,Healthcare,2017-2018,0.129492179
+European Union and United Kingdom,2019,medical_and_healthcare,233176668,Medical & Healthcare,8.367685092117018,Medium,Healthcare,2019-2020,0.233176668
+European Union and United Kingdom,2020,medical_and_healthcare,293153982,Medical & Healthcare,8.467095797715364,Medium,Healthcare,2019-2020,0.293153982
+European Union and United Kingdom,2021,medical_and_healthcare,870000000,Medical & Healthcare,8.939519252618618,High,Healthcare,2021-2023,0.87
+European Union and United Kingdom,2022,medical_and_healthcare,1018492172,Medical & Healthcare,9.007957695417412,High,Healthcare,2021-2023,1.018492172
+European Union and United Kingdom,2023,medical_and_healthcare,471326668,Medical & Healthcare,8.673322013147255,Medium,Healthcare,2021-2023,0.471326668
+European Union and United Kingdom,2017,nlp__customer_support,88436753,NLP & Customer Support,7.946632788858398,Low,Technology,2017-2018,0.088436753
+European Union and United Kingdom,2018,nlp__customer_support,183447253,NLP & Customer Support,8.263511212871068,Medium,Technology,2017-2018,0.183447253
+European Union and United Kingdom,2019,nlp__customer_support,360363941,NLP & Customer Support,8.55674132778927,Medium,Technology,2019-2020,0.360363941
+European Union and United Kingdom,2020,nlp__customer_support,502549683,NLP & Customer Support,8.701179003378368,High,Technology,2019-2020,0.502549683
+European Union and United Kingdom,2021,nlp__customer_support,1870000000,NLP & Customer Support,9.2718416065365,High,Technology,2021-2023,1.87
+European Union and United Kingdom,2022,nlp__customer_support,1361075902,NLP & Customer Support,9.133882344821714,High,Technology,2021-2023,1.361075902
+European Union and United Kingdom,2023,nlp__customer_support,1058261763,NLP & Customer Support,9.024593104528613,High,Technology,2021-2023,1.058261763
+European Union and United Kingdom,2020,quantum_computing,10469785,Quantum Computing,7.019937763410234,Low,Technology,2019-2020,0.010469785
+European Union and United Kingdom,2023,quantum_computing,71143648,Quantum Computing,7.852136130538409,Low,Technology,2021-2023,0.071143648
+European Union and United Kingdom,2017,retail,11054594,Retail,7.043542796955663,Low,Retail & Consumer,2017-2018,0.011054594
+European Union and United Kingdom,2019,retail,21197879,Retail,7.326292408821306,Low,Retail & Consumer,2019-2020,0.021197879
+European Union and United Kingdom,2020,retail,31409355,Retail,7.497059018129897,Low,Retail & Consumer,2019-2020,0.031409355
+European Union and United Kingdom,2021,retail,90000000,Retail,7.954242509439325,Low,Retail & Consumer,2021-2023,0.09
+European Union and United Kingdom,2022,retail,120367257,Retail,8.080508363681247,Medium,Retail & Consumer,2021-2023,0.120367257
+European Union and United Kingdom,2023,retail,71143648,Retail,7.852136130538409,Low,Retail & Consumer,2021-2023,0.071143648
+United States,2017,agritech,44218377,AgriTech,7.645602798105209,Low,Agriculture,2017-2018,0.044218377
+United States,2018,agritech,75537104,AgriTech,7.878160330492447,Low,Agriculture,2017-2018,0.075537104
+United States,2019,agritech,158984092,AgriTech,8.201353670847164,Medium,Agriculture,2019-2020,0.158984092
+United States,2020,agritech,209395701,AgriTech,8.320967761148253,Medium,Agriculture,2019-2020,0.209395701
+United States,2021,agritech,750000000,AgriTech,8.8750612633917,High,Agriculture,2021-2023,0.75
+United States,2022,agritech,212957454,AgriTech,8.328292845980146,Medium,Agriculture,2021-2023,0.212957454
+United States,2023,agritech,257895724,AgriTech,8.411444141445422,Medium,Agriculture,2021-2023,0.257895724
+United States,2018,ai_infrastructure_research_governance,21582030,AI Infrastructure,7.33409229189159,Low,Technology,2017-2018,0.02158203
+United States,2019,ai_infrastructure_research_governance,84791516,AI Infrastructure,7.928352400149269,Low,Technology,2019-2020,0.084791516
+United States,2020,ai_infrastructure_research_governance,31409355,AI Infrastructure,7.497059018129897,Low,Technology,2019-2020,0.031409355
+United States,2021,ai_infrastructure_research_governance,180000000,AI Infrastructure,8.255272505103306,Medium,Technology,2021-2023,0.18
+United States,2022,ai_infrastructure_research_governance,657390402,AI Infrastructure,8.817823359026308,High,Technology,2021-2023,0.657390402
+United States,2023,ai_infrastructure_research_governance,16202965817,AI Infrastructure,10.209594515781394,High,Technology,2021-2023,16.202965817
+United States,2017,ar_vr,11054594,AR/VR,7.043542796955663,Low,Technology,2017-2018,0.011054594
+United States,2018,ar_vr,21582030,AR/VR,7.33409229189159,Low,Technology,2017-2018,0.02158203
+United States,2019,ar_vr,21197879,AR/VR,7.326292408821306,Low,Technology,2019-2020,0.021197879
+United States,2020,ar_vr,282684197,AR/VR,8.451301530641869,Medium,Technology,2019-2020,0.282684197
+United States,2021,ar_vr,710000000,AR/VR,8.851258348719075,High,Technology,2021-2023,0.71
+United States,2022,ar_vr,185180395,AR/VR,8.267595006136371,Medium,Technology,2021-2023,0.185180395
+United States,2023,ar_vr,533577360,AR/VR,8.72719739393011,High,Technology,2021-2023,0.53357736
+United States,2017,av,320583231,Autonomous Vehicles,8.505940801628125,Medium,Transportation & Logistics,2017-2018,0.320583231
+United States,2018,av,291357402,Autonomous Vehicles,8.464426055914826,Medium,Transportation & Logistics,2017-2018,0.291357402
+United States,2019,av,445155457,Autonomous Vehicles,8.648511701604022,Medium,Transportation & Logistics,2019-2020,0.445155457
+United States,2020,av,2303352716,Autonomous Vehicles,9.362360447249221,High,Transportation & Logistics,2019-2020,2.303352716
+United States,2021,av,450000000,Autonomous Vehicles,8.653212513775344,Medium,Transportation & Logistics,2021-2023,0.45
+United States,2022,av,916642955,Autonomous Vehicles,8.962200204951493,High,Transportation & Logistics,2021-2023,0.916642955
+United States,2023,av,1707447550,Autonomous Vehicles,9.232347371741309,High,Transportation & Logistics,2021-2023,1.70744755
+United States,2017,creative__music__video_content,309528637,Creative Content,8.4907008353133,Medium,Media & Marketing,2017-2018,0.309528637
+United States,2018,creative__music__video_content,226611312,Creative Content,8.35528158521211,Medium,Media & Marketing,2017-2018,0.226611312
+United States,2019,creative__music__video_content,254374547,Creative Content,8.405473653161627,Medium,Media & Marketing,2019-2020,0.254374547
+United States,2020,creative__music__video_content,408321618,Creative Content,8.61100237362756,Medium,Media & Marketing,2019-2020,0.408321618
+United States,2021,creative__music__video_content,1340000000,Creative Content,9.127104798364808,High,Media & Marketing,2021-2023,1.34
+United States,2022,creative__music__video_content,907383935,Creative Content,8.957791085925574,High,Media & Marketing,2021-2023,0.907383935
+United States,2023,creative__music__video_content,675864655,Creative Content,8.829859735184682,High,Media & Marketing,2021-2023,0.675864655
+United States,2017,cybersecurity__data_protection,165818913,Cybersecurity,8.219634063868611,Medium,Technology,2017-2018,0.165818913
+United States,2018,cybersecurity__data_protection,118701164,Cybersecurity,8.074454977727113,Medium,Technology,2017-2018,0.118701164
+United States,2019,cybersecurity__data_protection,466353336,Cybersecurity,8.668715087780999,Medium,Technology,2019-2020,0.466353336
+United States,2020,cybersecurity__data_protection,743354740,Cybersecurity,8.87119611505049,High,Technology,2019-2020,0.74335474
+United States,2021,cybersecurity__data_protection,510000000,Cybersecurity,8.707570176097937,High,Technology,2021-2023,0.51
+United States,2022,cybersecurity__data_protection,861088836,Cybersecurity,8.93504795864806,High,Technology,2021-2023,0.861088836
+United States,2023,cybersecurity__data_protection,249002768,Cybersecurity,8.396204174888686,Medium,Technology,2021-2023,0.249002768
+United States,2017,data_management__processing,298474043,Data Management,8.474906568389898,Medium,Technology,2017-2018,0.298474043
+United States,2018,data_management__processing,1057519458,Data Management,9.02428836699203,High,Technology,2017-2018,1.057519458
+United States,2019,data_management__processing,1854814404,Data Management,9.268300459853391,High,Technology,2019-2020,1.854814404
+United States,2020,data_management__processing,1486709480,Data Management,9.17222611071447,High,Technology,2019-2020,1.48670948
+United States,2021,data_management__processing,4720000000,Data Management,9.673941998634088,High,Technology,2021-2023,4.72
+United States,2022,data_management__processing,2972145338,Data Management,9.47307004262155,High,Technology,2021-2023,2.972145338
+United States,2023,data_management__processing,4197475228,Data Management,9.62298814176669,High,Technology,2021-2023,4.197475228
+United States,2017,drones,33163783,Drones,7.52066406477077,Low,Transportation & Logistics,2017-2018,0.033163783
+United States,2018,drones,53955074,Drones,7.732032292514441,Low,Transportation & Logistics,2017-2018,0.053955074
+United States,2019,drones,42395758,Drones,7.627322404485287,Low,Transportation & Logistics,2019-2020,0.042395758
+United States,2020,drones,136107206,Drones,8.133881118907897,Medium,Transportation & Logistics,2019-2020,0.136107206
+United States,2021,drones,2030000000,Drones,9.307496037913213,High,Transportation & Logistics,2021-2023,2.03
+United States,2022,drones,3740643976,Drones,9.572946375234691,High,Transportation & Logistics,2021-2023,3.740643976
+United States,2023,drones,773687171,Drones,8.888565395603754,High,Transportation & Logistics,2021-2023,0.773687171
+United States,2017,ed_tech,397965390,EdTech,8.599845304270673,Medium,Education,2017-2018,0.39796539
+United States,2018,ed_tech,496386684,EdTech,8.695820122659713,Medium,Education,2017-2018,0.496386684
+United States,2019,ed_tech,243775607,EdTech,8.386990246502616,Medium,Education,2019-2020,0.243775607
+United States,2020,ed_tech,2093957014,EdTech,9.320967761977867,High,Education,2019-2020,2.093957014
+United States,2021,ed_tech,1160000000,EdTech,9.064457989226918,High,Education,2021-2023,1.16
+United States,2022,ed_tech,824052757,EdTech,8.915955016722037,High,Education,2021-2023,0.824052757
+United States,2023,ed_tech,773687171,EdTech,8.888565395603754,High,Education,2021-2023,0.773687171
+United States,2017,energy__oil__and_gas,1171786983,Energy & Oil/Gas,9.068848669262323,High,Energy,2017-2018,1.171786983
+United States,2018,energy__oil__and_gas,528759729,Energy & Oil/Gas,8.723258371328049,High,Energy,2017-2018,0.528759729
+United States,2019,energy__oil__and_gas,614738488,Energy & Oil/Gas,8.788690404600851,High,Energy,2019-2020,0.614738488
+United States,2020,energy__oil__and_gas,722415170,Energy & Oil/Gas,8.85878685715334,High,Energy,2019-2020,0.72241517
+United States,2021,energy__oil__and_gas,1240000000,Energy & Oil/Gas,9.093421685162236,High,Energy,2021-2023,1.24
+United States,2022,energy__oil__and_gas,2453640232,Energy & Oil/Gas,9.389810884099449,High,Energy,2021-2023,2.453640232
+United States,2023,energy__oil__and_gas,604721007,Energy & Oil/Gas,8.781555055534529,High,Energy,2021-2023,0.604721007
+United States,2017,entertainment,33163783,Entertainment,7.52066406477077,Low,Media & Marketing,2017-2018,0.033163783
+United States,2018,entertainment,129492179,Entertainment,8.112243538921406,Medium,Media & Marketing,2017-2018,0.129492179
+United States,2019,entertainment,84791516,Entertainment,7.928352400149269,Low,Media & Marketing,2019-2020,0.084791516
+United States,2020,entertainment,62818710,Entertainment,7.798089013793878,Low,Media & Marketing,2019-2020,0.06281871
+United States,2021,entertainment,410000000,Entertainment,8.612783856719735,Medium,Media & Marketing,2021-2023,0.41
+United States,2022,entertainment,148144316,Entertainment,8.170684993128315,Medium,Media & Marketing,2021-2023,0.148144316
+United States,2023,entertainment,249002768,Entertainment,8.396204174888686,Medium,Media & Marketing,2021-2023,0.249002768
+United States,2017,facial_recognition,33163783,Facial Recognition,7.52066406477077,Low,Technology,2017-2018,0.033163783
+United States,2018,facial_recognition,43164060,Facial Recognition,7.635122287555571,Low,Technology,2017-2018,0.04316406
+United States,2019,facial_recognition,105989395,Facial Recognition,8.025262413157325,Low,Technology,2019-2020,0.105989395
+United States,2020,facial_recognition,177986346,Facial Recognition,8.250386687228552,Medium,Technology,2019-2020,0.177986346
+United States,2021,facial_recognition,460000000,Facial Recognition,8.662757831681574,Medium,Technology,2021-2023,0.46
+United States,2022,facial_recognition,370360790,Facial Recognition,8.568625001800353,Medium,Technology,2021-2023,0.37036079
+United States,2023,facial_recognition,80036604,Facial Recognition,7.903288652985791,Low,Technology,2021-2023,0.080036604
+United States,2017,fintech,165818913,FinTech,8.219634063868611,Medium,Financial Services,2017-2018,0.165818913
+United States,2018,fintech,129492179,FinTech,8.112243538921406,Medium,Financial Services,2017-2018,0.129492179
+United States,2019,fintech,328567123,FinTech,8.516624105008923,Medium,Financial Services,2019-2020,0.328567123
+United States,2020,fintech,324563337,FinTech,8.511299459920684,Medium,Financial Services,2019-2020,0.324563337
+United States,2021,fintech,1550000000,FinTech,9.190331698170292,High,Financial Services,2021-2023,1.55
+United States,2022,fintech,1194413547,FinTech,9.077154720498935,High,Financial Services,2021-2023,1.194413547
+United States,2023,fintech,853723775,FinTech,8.931317376077327,High,Financial Services,2021-2023,0.853723775
+United States,2017,fitness_and_wellness,33163783,Fitness & Wellness,7.52066406477077,Low,Healthcare,2017-2018,0.033163783
+United States,2018,fitness_and_wellness,140283193,Fitness & Wellness,8.147005642342764,Medium,Healthcare,2017-2018,0.140283193
+United States,2019,fitness_and_wellness,264973486,Fitness & Wellness,8.423202419370845,Medium,Healthcare,2019-2020,0.264973486
+United States,2020,fitness_and_wellness,335033122,Fitness & Wellness,8.525087744322686,Medium,Healthcare,2019-2020,0.335033122
+United States,2021,fitness_and_wellness,1530000000,Fitness & Wellness,9.1846914308176,High,Healthcare,2021-2023,1.53
+United States,2022,fitness_and_wellness,388878829,Fitness & Wellness,8.589814300311899,Medium,Healthcare,2021-2023,0.388878829
+United States,2023,fitness_and_wellness,177859120,Fitness & Wellness,8.250076139210448,Medium,Healthcare,2021-2023,0.17785912
+United States,2023,hardware,275681636,Hardware,8.44040783738074,Medium,Technology,2021-2023,0.275681636
+United States,2017,insurtech,22109188,InsurTech,7.344572792619644,Low,Financial Services,2017-2018,0.022109188
+United States,2018,insurtech,43164060,InsurTech,7.635122287555571,Low,Financial Services,2017-2018,0.04316406
+United States,2019,insurtech,222577728,InsurTech,8.347481704964439,Medium,Financial Services,2019-2020,0.222577728
+United States,2020,insurtech,450200758,InsurTech,8.653406221883825,Medium,Financial Services,2019-2020,0.450200758
+United States,2021,insurtech,1200000000,InsurTech,9.079181246047625,High,Financial Services,2021-2023,1.2
+United States,2022,insurtech,833311777,InsurTech,8.920807519651133,High,Financial Services,2021-2023,0.833311777
+United States,2023,insurtech,373504152,InsurTech,8.572295433944367,Medium,Financial Services,2021-2023,0.373504152
+United States,2017,legal_tech,77382159,LegalTech,7.888640842582253,Low,Professional Services,2017-2018,0.077382159
+United States,2018,legal_tech,269775372,LegalTech,8.431002300070135,Medium,Professional Services,2017-2018,0.269775372
+United States,2019,legal_tech,943305611,LegalTech,8.974652417730454,High,Professional Services,2019-2020,0.943305611
+United States,2020,legal_tech,366442477,LegalTech,8.564005810130839,Medium,Professional Services,2019-2020,0.366442477
+United States,2021,legal_tech,1000000000,LegalTech,9.0,High,Professional Services,2021-2023,1.0
+United States,2022,legal_tech,425914908,LegalTech,8.629322841644127,Medium,Professional Services,2021-2023,0.425914908
+United States,2023,legal_tech,240109812,LegalTech,8.380409907705454,Medium,Professional Services,2021-2023,0.240109812
+United States,2017,manufacturing,66327565,Manufacturing,7.821694053887029,Low,Manufacturing,2017-2018,0.066327565
+United States,2018,manufacturing,32373045,Manufacturing,7.510183550947271,Low,Manufacturing,2017-2018,0.032373045
+United States,2019,manufacturing,10598939,Manufacturing,7.025262392669686,Low,Manufacturing,2019-2020,0.010598939
+United States,2020,manufacturing,94228066,Manufacturing,7.97418027745853,Low,Manufacturing,2019-2020,0.094228066
+United States,2021,manufacturing,400000000,Manufacturing,8.602059991327963,Medium,Manufacturing,2021-2023,0.4
+United States,2022,manufacturing,166662355,Manufacturing,8.22183751427278,Medium,Manufacturing,2021-2023,0.166662355
+United States,2023,manufacturing,177859120,Manufacturing,8.250076139210448,Medium,Manufacturing,2021-2023,0.17785912
+United States,2017,marketing__digital_ads,88436753,Marketing & Digital Ads,7.946632788858398,Low,Media & Marketing,2017-2018,0.088436753
+United States,2018,marketing__digital_ads,129492179,Marketing & Digital Ads,8.112243538921406,Medium,Media & Marketing,2017-2018,0.129492179
+United States,2019,marketing__digital_ads,127187273,Marketing & Digital Ads,8.104443655790343,Medium,Media & Marketing,2019-2020,0.127187273
+United States,2020,marketing__digital_ads,1287783564,Marketing & Digital Ads,9.109842877884809,High,Media & Marketing,2019-2020,1.287783564
+United States,2021,marketing__digital_ads,360000000,Marketing & Digital Ads,8.556302500767288,Medium,Media & Marketing,2021-2023,0.36
+United States,2022,marketing__digital_ads,537023145,Marketing & Digital Ads,8.729993003630975,High,Media & Marketing,2021-2023,0.537023145
+United States,2023,marketing__digital_ads,364611196,Marketing & Digital Ads,8.561830000266202,Medium,Media & Marketing,2021-2023,0.364611196
+United States,2017,medical_and_healthcare,320583231,Medical & Healthcare,8.505940801628125,Medium,Healthcare,2017-2018,0.320583231
+United States,2018,medical_and_healthcare,625878863,Medical & Healthcare,8.79649028493328,High,Healthcare,2017-2018,0.625878863
+United States,2019,medical_and_healthcare,1568643039,Medical & Healthcare,9.195524126614263,High,Healthcare,2019-2020,1.568643039
+United States,2020,medical_and_healthcare,3653954990,Medical & Healthcare,9.562763193340814,High,Healthcare,2019-2020,3.65395499
+United States,2021,medical_and_healthcare,6730000000,Medical & Healthcare,9.828015064223976,High,Healthcare,2021-2023,6.73
+United States,2022,medical_and_healthcare,4805431247,Medical & Healthcare,9.681732368027127,High,Healthcare,2021-2023,4.805431247
+United States,2023,medical_and_healthcare,2436669942,Medical & Healthcare,9.386796706010388,High,Healthcare,2021-2023,2.436669942
+United States,2017,nlp__customer_support,740657810,NLP & Customer Support,8.869617606692849,High,Technology,2017-2018,0.74065781
+United States,2018,nlp__customer_support,895654235,NLP & Customer Support,8.952140383754775,High,Technology,2017-2018,0.895654235
+United States,2019,nlp__customer_support,3550644716,NLP & Customer Support,9.550307218175984,High,Technology,2019-2020,3.550644716
+United States,2020,nlp__customer_support,3004828315,NLP & Customer Support,9.477819663034872,High,Technology,2019-2020,3.004828315
+United States,2021,nlp__customer_support,11950000000,NLP & Customer Support,10.077367905284156,High,Technology,2021-2023,11.95
+United States,2022,nlp__customer_support,4731359089,NLP & Customer Support,9.674985910308784,High,Technology,2021-2023,4.731359089
+United States,2023,nlp__customer_support,4819982148,NLP & Customer Support,9.68304542972444,High,Technology,2021-2023,4.819982148
+United States,2017,quantum_computing,55272971,Quantum Computing,7.742512809148949,Low,Technology,2017-2018,0.055272971
+United States,2019,quantum_computing,84791516,Quantum Computing,7.928352400149269,Low,Technology,2019-2020,0.084791516
+United States,2020,quantum_computing,272214412,Quantum Computing,8.434911114571879,Medium,Technology,2019-2020,0.272214412
+United States,2021,quantum_computing,380000000,Quantum Computing,8.57978359661681,Medium,Technology,2021-2023,0.38
+United States,2022,quantum_computing,296288632,Quantum Computing,8.471714988792296,Medium,Technology,2021-2023,0.296288632
+United States,2023,quantum_computing,1636303902,Quantum Computing,9.213863966025178,High,Technology,2021-2023,1.636303902
+United States,2017,retail,110545942,Retail,8.04354280481293,Low,Retail & Consumer,2017-2018,0.110545942
+United States,2018,retail,97119134,Retail,7.9873048011951635,Low,Retail & Consumer,2017-2018,0.097119134
+United States,2019,retail,31796818,Retail,7.502383661047774,Low,Retail & Consumer,2019-2020,0.031796818
+United States,2020,retail,157046776,Retail,8.196029025231299,Medium,Retail & Consumer,2019-2020,0.157046776
+United States,2021,retail,480000000,Retail,8.681241237375588,Medium,Retail & Consumer,2021-2023,0.48
+United States,2022,retail,564800204,Retail,8.751894844906456,High,Retail & Consumer,2021-2023,0.564800204
+United States,2023,retail,311253460,Retail,8.493114187896742,Medium,Retail & Consumer,2021-2023,0.31125346
+World,2017,agritech,110545942,AgriTech,8.04354280481293,Low,Agriculture,2017-2018,0.110545942
+World,2018,agritech,248193342,AgriTech,8.394790126995732,Medium,Agriculture,2017-2018,0.248193342
+World,2019,agritech,211978789,AgriTech,8.326292406772541,Medium,Agriculture,2019-2020,0.211978789
+World,2020,agritech,376912263,AgriTech,8.576240267634251,Medium,Agriculture,2019-2020,0.376912263
+World,2021,agritech,1040000000,AgriTech,9.01703333929878,High,Agriculture,2021-2023,1.04
+World,2022,agritech,416655888,AgriTech,8.619777523465984,Medium,Agriculture,2021-2023,0.416655888
+World,2023,agritech,444647800,AgriTech,8.648016147882485,Medium,Agriculture,2021-2023,0.4446478
+World,2018,ai_infrastructure_research_governance,32373045,AI Infrastructure,7.510183550947271,Low,Technology,2017-2018,0.032373045
+World,2019,ai_infrastructure_research_governance,233176668,AI Infrastructure,8.367685092117018,Medium,Technology,2019-2020,0.233176668
+World,2020,ai_infrastructure_research_governance,62818710,AI Infrastructure,7.798089013793878,Low,Technology,2019-2020,0.06281871
+World,2021,ai_infrastructure_research_governance,490000000,AI Infrastructure,8.690196080028514,Medium,Technology,2021-2023,0.49
+World,2022,ai_infrastructure_research_governance,759239619,AI Infrastructure,8.880378862570101,High,Technology,2021-2023,0.759239619
+World,2023,ai_infrastructure_research_governance,16247430597,AI Infrastructure,10.210784690498054,High,Technology,2021-2023,16.247430597
+World,2017,ar_vr,77382159,AR/VR,7.888640842582253,Low,Technology,2017-2018,0.077382159
+World,2018,ar_vr,43164060,AR/VR,7.635122287555571,Low,Technology,2017-2018,0.04316406
+World,2019,ar_vr,190780910,AR/VR,8.280534915984227,Medium,Technology,2019-2020,0.19078091
+World,2020,ar_vr,785233880,AR/VR,8.894999029567318,High,Technology,2019-2020,0.78523388
+World,2021,ar_vr,890000000,AR/VR,8.949390006644913,High,Technology,2021-2023,0.89
+World,2022,ar_vr,305547652,AR/VR,8.485078950705619,Medium,Technology,2021-2023,0.305547652
+World,2023,ar_vr,595828051,AR/VR,8.7751209455184,High,Technology,2021-2023,0.595828051
+World,2017,av,497456738,Autonomous Vehicles,8.696755317715244,Medium,Transportation & Logistics,2017-2018,0.497456738
+World,2018,av,615087848,Autonomous Vehicles,8.788937146957618,High,Transportation & Logistics,2017-2018,0.615087848
+World,2019,av,741925762,Autonomous Vehicles,8.870360451415499,High,Transportation & Logistics,2019-2020,0.741925762
+World,2020,av,2596506698,Autonomous Vehicles,9.41438944724715,High,Transportation & Logistics,2019-2020,2.596506698
+World,2021,av,2850000000,Autonomous Vehicles,9.45484486000851,High,Transportation & Logistics,2021-2023,2.85
+World,2022,av,2027725324,Autonomous Vehicles,9.307009125044786,High,Transportation & Logistics,2021-2023,2.027725324
+World,2023,av,2365526294,Autonomous Vehicles,9.373927779810346,High,Transportation & Logistics,2021-2023,2.365526294
+World,2017,creative__music__video_content,497456738,Creative Content,8.696755317715244,Medium,Media & Marketing,2017-2018,0.497456738
+World,2018,creative__music__video_content,690624952,Creative Content,8.839242265180754,High,Media & Marketing,2017-2018,0.690624952
+World,2019,creative__music__video_content,710128943,Creative Content,8.851337213717652,High,Media & Marketing,2019-2020,0.710128943
+World,2020,creative__music__video_content,1036508722,Creative Content,9.015572960940766,High,Media & Marketing,2019-2020,1.036508722
+World,2021,creative__music__video_content,3420000000,Creative Content,9.534026106056135,High,Media & Marketing,2021-2023,3.42
+World,2022,creative__music__video_content,1712918652,Creative Content,9.233736738431709,High,Media & Marketing,2021-2023,1.712918652
+World,2023,creative__music__video_content,1191656103,Creative Content,9.076150941546828,High,Media & Marketing,2021-2023,1.191656103
+World,2017,cybersecurity__data_protection,287419449,Cybersecurity,8.458516152481545,Medium,Technology,2017-2018,0.287419449
+World,2018,cybersecurity__data_protection,194238268,Cybersecurity,8.288334796859145,Medium,Technology,2017-2018,0.194238268
+World,2019,cybersecurity__data_protection,476952275,Cybersecurity,8.678474924656264,Medium,Technology,2019-2020,0.476952275
+World,2020,cybersecurity__data_protection,942280656,Cybersecurity,8.974180275614943,High,Technology,2019-2020,0.942280656
+World,2021,cybersecurity__data_protection,850000000,Cybersecurity,8.929418925714293,High,Technology,2021-2023,0.85
+World,2022,cybersecurity__data_protection,1083305310,Cybersecurity,9.034750871917879,High,Technology,2021-2023,1.08330531
+World,2023,cybersecurity__data_protection,791473083,Cybersecurity,8.898436149642661,High,Technology,2021-2023,0.791473083
+World,2017,data_management__processing,464292956,Data Management,8.666792094836675,Medium,Technology,2017-2018,0.464292956
+World,2018,data_management__processing,1197802652,Data Management,9.078385270300778,High,Technology,2017-2018,1.197802652
+World,2019,data_management__processing,2225777285,Data Management,9.34748170594004,High,Technology,2019-2020,2.225777285
+World,2020,data_management__processing,2334762071,Data Management,9.368242629434592,High,Technology,2019-2020,2.334762071
+World,2021,data_management__processing,6520000000,Data Management,9.81424759573192,High,Technology,2021-2023,6.52
+World,2022,data_management__processing,4638768891,Data Management,9.666402735988552,High,Technology,2021-2023,4.638768891
+World,2023,data_management__processing,4891125795,Data Management,9.689408832596747,High,Technology,2021-2023,4.891125795
+World,2017,drones,77382159,Drones,7.888640842582253,Low,Transportation & Logistics,2017-2018,0.077382159
+World,2018,drones,140283193,Drones,8.147005642342764,Medium,Transportation & Logistics,2017-2018,0.140283193
+World,2019,drones,190780910,Drones,8.280534915984227,Medium,Transportation & Logistics,2019-2020,0.19078091
+World,2020,drones,251274842,Drones,8.40014900857857,Medium,Transportation & Logistics,2019-2020,0.251274842
+World,2021,drones,2200000000,Drones,9.342422680822207,High,Transportation & Logistics,2021-2023,2.2
+World,2022,drones,3907306332,Drones,9.59187746115619,High,Transportation & Logistics,2021-2023,3.907306332
+World,2023,drones,853723775,Drones,8.931317376077327,High,Transportation & Logistics,2021-2023,0.853723775
+World,2017,ed_tech,1437097243,EdTech,9.157486156213158,High,Education,2017-2018,1.437097243
+World,2018,ed_tech,2784081839,EdTech,9.444681997355088,High,Education,2017-2018,2.784081839
+World,2019,ed_tech,1017498187,EdTech,9.007533644062764,High,Education,2019-2020,1.017498187
+World,2020,ed_tech,2481339062,EdTech,9.39468611239575,High,Education,2019-2020,2.481339062
+World,2021,ed_tech,2240000000,EdTech,9.350248018334163,High,Education,2021-2023,2.24
+World,2022,ed_tech,1416630021,EdTech,9.151256441060063,High,Education,2021-2023,1.416630021
+World,2023,ed_tech,1102726543,EdTech,9.042467828314864,High,Education,2021-2023,1.102726543
+World,2017,energy__oil__and_gas,1238114548,Energy & Oil/Gas,9.092760826641262,High,Energy,2017-2018,1.238114548
+World,2018,energy__oil__and_gas,776953071,Energy & Oil/Gas,8.890394787628136,High,Energy,2017-2018,0.776953071
+World,2019,energy__oil__and_gas,805519398,Energy & Oil/Gas,8.906076003281523,High,Energy,2019-2020,0.805519398
+World,2020,energy__oil__and_gas,1067918077,Energy & Oil/Gas,9.02853793801887,High,Energy,2019-2020,1.067918077
+World,2021,energy__oil__and_gas,3680000000,Energy & Oil/Gas,9.565847818673518,High,Energy,2021-2023,3.68
+World,2022,energy__oil__and_gas,3379542206,Energy & Oil/Gas,9.528857874575472,High,Energy,2021-2023,3.379542206
+World,2023,energy__oil__and_gas,1307264531,Energy & Oil/Gas,9.116363477962425,High,Energy,2021-2023,1.307264531
+World,2017,entertainment,254255666,Entertainment,8.405270639805662,Medium,Media & Marketing,2017-2018,0.254255666
+World,2018,entertainment,258984357,Entertainment,8.413273532908473,Medium,Media & Marketing,2017-2018,0.258984357
+World,2019,entertainment,158984092,Entertainment,8.201353670847164,Medium,Media & Marketing,2019-2020,0.158984092
+World,2020,entertainment,167516561,Entertainment,8.224057748658705,Medium,Media & Marketing,2019-2020,0.167516561
+World,2021,entertainment,710000000,Entertainment,8.851258348719075,High,Media & Marketing,2021-2023,0.71
+World,2022,entertainment,324065691,Entertainment,8.51063305448763,Medium,Media & Marketing,2021-2023,0.324065691
+World,2023,entertainment,462433712,Entertainment,8.665049487181266,Medium,Media & Marketing,2021-2023,0.462433712
+World,2017,facial_recognition,409019985,Facial Recognition,8.611744528455208,Medium,Technology,2017-2018,0.409019985
+World,2018,facial_recognition,1834472530,Facial Recognition,9.263511212871068,High,Technology,2017-2018,1.83447253
+World,2019,facial_recognition,1006899248,Facial Recognition,9.002986016505238,High,Technology,2019-2020,1.006899248
+World,2020,facial_recognition,1078387862,Facial Recognition,9.032774990934486,High,Technology,2019-2020,1.078387862
+World,2021,facial_recognition,3580000000,Facial Recognition,9.553883026643874,High,Technology,2021-2023,3.58
+World,2022,facial_recognition,888865895,Facial Recognition,8.948836243023365,High,Technology,2021-2023,0.888865895
+World,2023,facial_recognition,249002768,Facial Recognition,8.396204174888686,Medium,Technology,2021-2023,0.249002768
+World,2017,fintech,541675115,FinTech,8.733738884200035,High,Financial Services,2017-2018,0.541675115
+World,2018,fintech,420849580,FinTech,8.624126898094373,Medium,Financial Services,2017-2018,0.42084958
+World,2019,fintech,858514095,FinTech,8.93374742975957,High,Financial Services,2019-2020,0.858514095
+World,2020,fintech,1204025283,FinTech,9.080635606649462,High,Financial Services,2019-2020,1.204025283
+World,2021,fintech,2750000000,FinTech,9.439332693830263,High,Financial Services,2021-2023,2.75
+World,2022,fintech,2018466304,FinTech,9.305021503754254,High,Financial Services,2021-2023,2.018466304
+World,2023,fintech,1894199626,FinTech,9.277425746526651,High,Financial Services,2021-2023,1.894199626
+World,2017,fitness_and_wellness,33163783,Fitness & Wellness,7.52066406477077,Low,Healthcare,2017-2018,0.033163783
+World,2018,fitness_and_wellness,215820298,Fitness & Wellness,8.334092287866998,Medium,Healthcare,2017-2018,0.215820298
+World,2019,fitness_and_wellness,264973486,Fitness & Wellness,8.423202419370845,Medium,Healthcare,2019-2020,0.264973486
+World,2020,fitness_and_wellness,345502907,Fitness & Wellness,8.538451705802107,Medium,Healthcare,2019-2020,0.345502907
+World,2021,fitness_and_wellness,1590000000,Fitness & Wellness,9.20139712432045,High,Healthcare,2021-2023,1.59
+World,2022,fitness_and_wellness,518505106,Fitness & Wellness,8.71475303747859,High,Healthcare,2021-2023,0.518505106
+World,2023,fitness_and_wellness,195645032,Fitness & Wellness,8.291468824368673,Medium,Healthcare,2021-2023,0.195645032
+World,2019,generative_ai,889293426,Generative AI,8.949045081855216,High,Technology,2019-2020,0.889293426
+World,2020,generative_ai,2181440624,Generative AI,9.3387433965481,High,Technology,2019-2020,2.181440624
+World,2021,generative_ai,4171100137,Generative AI,9.62025061622428,High,Technology,2021-2023,4.171100137
+World,2022,generative_ai,2640524214,Generative AI,9.421690154387804,High,Technology,2021-2023,2.640524214
+World,2023,generative_ai,22434435372,Generative AI,10.350915143719305,High,Technology,2021-2023,22.434435372
+World,2023,hardware,275681636,Hardware,8.44040783738074,Medium,Technology,2021-2023,0.275681636
+World,2017,insurtech,176873507,InsurTech,8.247662786977775,Medium,Financial Services,2017-2018,0.176873507
+World,2018,insurtech,151074208,InsurTech,8.179190326156428,Medium,Financial Services,2017-2018,0.151074208
+World,2019,insurtech,773722580,InsurTech,8.888585271313213,High,Financial Services,2019-2020,0.77372258
+World,2020,insurtech,628187104,InsurTech,8.798089016559262,High,Financial Services,2019-2020,0.628187104
+World,2021,insurtech,1570000000,InsurTech,9.195899652409233,High,Financial Services,2021-2023,1.57
+World,2022,insurtech,1259226685,InsurTech,9.100103918497718,High,Financial Services,2021-2023,1.259226685
+World,2023,insurtech,533577360,InsurTech,8.72719739393011,High,Financial Services,2021-2023,0.53357736
+World,2017,legal_tech,110545942,LegalTech,8.04354280481293,Low,Professional Services,2017-2018,0.110545942
+World,2018,legal_tech,410058565,LegalTech,8.612845887548902,Medium,Professional Services,2017-2018,0.410058565
+World,2019,legal_tech,1112888642,LegalTech,9.04645171008094,High,Professional Services,2019-2020,1.112888642
+World,2020,legal_tech,513019468,LegalTech,8.710133845978385,High,Professional Services,2019-2020,0.513019468
+World,2021,legal_tech,1270000000,LegalTech,9.103803720955957,High,Professional Services,2021-2023,1.27
+World,2022,legal_tech,592577264,LegalTech,8.772744984456278,High,Professional Services,2021-2023,0.592577264
+World,2023,legal_tech,373504152,LegalTech,8.572295433944367,Medium,Professional Services,2021-2023,0.373504152
+World,2017,manufacturing,121600536,Manufacturing,8.084935489256859,Medium,Manufacturing,2017-2018,0.121600536
+World,2018,manufacturing,258984357,Manufacturing,8.413273532908473,Medium,Manufacturing,2017-2018,0.258984357
+World,2019,manufacturing,84791516,Manufacturing,7.928352400149269,Low,Manufacturing,2019-2020,0.084791516
+World,2020,manufacturing,481610113,Manufacturing,8.682695597797075,Medium,Manufacturing,2019-2020,0.481610113
+World,2021,manufacturing,780000000,Manufacturing,8.89209460269048,High,Manufacturing,2021-2023,0.78
+World,2022,manufacturing,620354323,Manufacturing,8.792639812998198,High,Manufacturing,2021-2023,0.620354323
+World,2023,manufacturing,791473083,Manufacturing,8.898436149642661,High,Manufacturing,2021-2023,0.791473083
+World,2017,marketing__digital_ads,143709724,Marketing & Digital Ads,8.157486155306552,Medium,Media & Marketing,2017-2018,0.143709724
+World,2018,marketing__digital_ads,194238268,Marketing & Digital Ads,8.288334796859145,Medium,Media & Marketing,2017-2018,0.194238268
+World,2019,marketing__digital_ads,275572426,Marketing & Digital Ads,8.44023575955217,Medium,Media & Marketing,2019-2020,0.275572426
+World,2020,marketing__digital_ads,1591407331,Marketing & Digital Ads,9.201781354356903,High,Media & Marketing,2019-2020,1.591407331
+World,2021,marketing__digital_ads,770000000,Marketing & Digital Ads,8.886490725172482,High,Media & Marketing,2021-2023,0.77
+World,2022,marketing__digital_ads,703685500,Marketing & Digital Ads,8.847378602136011,High,Media & Marketing,2021-2023,0.7036855
+World,2023,marketing__digital_ads,942653335,Marketing & Digital Ads,8.974352008350522,High,Media & Marketing,2021-2023,0.942653335
+World,2017,medical_and_healthcare,641166462,Medical & Healthcare,8.806970797292106,High,Healthcare,2017-2018,0.641166462
+World,2018,medical_and_healthcare,1122265548,Medical & Healthcare,9.050095630882629,High,Healthcare,2017-2018,1.122265548
+World,2019,medical_and_healthcare,2342365618,Medical & Healthcare,9.369654684710238,High,Healthcare,2019-2020,2.342365618
+World,2020,medical_and_healthcare,5412878882,Medical & Healthcare,9.733428309472819,High,Healthcare,2019-2020,5.412878882
+World,2021,medical_and_healthcare,11460000000,Medical & Healthcare,10.059184617631372,High,Healthcare,2021-2023,11.46
+World,2022,medical_and_healthcare,8499780124,Medical & Healthcare,9.929407691341517,High,Healthcare,2021-2023,8.499780124
+World,2023,medical_and_healthcare,3735041517,Medical & Healthcare,9.572295433595539,High,Healthcare,2021-2023,3.735041517
+World,2017,nlp__customer_support,1249169142,NLP & Customer Support,9.096621247392417,High,Technology,2017-2018,1.249169142
+World,2018,nlp__customer_support,3097021271,NLP & Customer Support,9.49094418819379,High,Technology,2017-2018,3.097021271
+World,2019,nlp__customer_support,5193480331,NLP & Customer Support,9.715458491178886,High,Technology,2019-2020,5.193480331
+World,2020,nlp__customer_support,4721873067,NLP & Customer Support,9.674114308231395,High,Technology,2019-2020,4.721873067
+World,2021,nlp__customer_support,17760000000,NLP & Customer Support,10.249442961442583,High,Technology,2021-2023,17.76
+World,2022,nlp__customer_support,8870140914,NLP & Customer Support,9.947930519232687,High,Technology,2021-2023,8.870140914
+World,2023,nlp__customer_support,7167722529,NLP & Customer Support,9.855381184927424,High,Technology,2021-2023,7.167722529
+World,2017,quantum_computing,132655130,Quantum Computing,8.12272404955101,Medium,Technology,2017-2018,0.13265513
+World,2018,quantum_computing,75537104,Quantum Computing,7.878160330492447,Low,Technology,2017-2018,0.075537104
+World,2019,quantum_computing,169583031,Quantum Computing,8.229382393252294,Medium,Technology,2019-2020,0.169583031
+World,2020,quantum_computing,345502907,Quantum Computing,8.538451705802107,Medium,Technology,2019-2020,0.345502907
+World,2021,quantum_computing,570000000,Quantum Computing,8.755874855672491,High,Technology,2021-2023,0.57
+World,2022,quantum_computing,694426481,Quantum Computing,8.84162627370774,High,Technology,2021-2023,0.694426481
+World,2023,quantum_computing,1751912330,Quantum Computing,9.243512369212263,High,Technology,2021-2023,1.75191233
+World,2017,retail,187928101,Retail,8.27399172526682,Medium,Retail & Consumer,2017-2018,0.187928101
+World,2018,retail,172656238,Retail,8.237182273852792,Medium,Retail & Consumer,2017-2018,0.172656238
+World,2019,retail,137786213,Retail,8.139205763888189,Medium,Retail & Consumer,2019-2020,0.137786213
+World,2020,retail,638656889,Retail,8.80526760114105,High,Retail & Consumer,2019-2020,0.638656889
+World,2021,retail,780000000,Retail,8.89209460269048,High,Retail & Consumer,2021-2023,0.78
+World,2022,retail,870347856,Retail,8.939692863822595,High,Retail & Consumer,2021-2023,0.870347856
+World,2023,retail,595828051,Retail,8.7751209455184,High,Retail & Consumer,2021-2023,0.595828051
